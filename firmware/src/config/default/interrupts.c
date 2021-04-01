@@ -63,6 +63,7 @@
 
 void CORE_TIMER_InterruptHandler( void );
 void SDHC_InterruptHandler( void );
+void GLCD_Interrupt_Handler( void );
 
 
 
@@ -75,6 +76,11 @@ void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
 void __ISR(_SDHC_VECTOR, ipl1SRS) SDHC_Handler (void)
 {
     SDHC_InterruptHandler();
+}
+
+void __ISR(_GLCD_VECTOR, ipl1SRS) GLCD_Handler (void)
+{
+    GLCD_Interrupt_Handler();
 }
 
 

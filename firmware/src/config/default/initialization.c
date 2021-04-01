@@ -344,13 +344,16 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
-    CORETIMER_Initialize();
 	SDHC_Initialize();
 
+    CORETIMER_Initialize();
 	UART2_Initialize();
 
 	DDR_Initialize();
 
+
+
+    GFX_Initialize();
 
 
     sysObj.drvSDMMC0 = DRV_SDMMC_Initialize(DRV_SDMMC_INDEX_0,(SYS_MODULE_INIT *)&drvSDMMC0InitData);
@@ -363,6 +366,8 @@ void SYS_Initialize ( void* data )
 
 
     APP_FS_Initialize();
+    APP_LCD_Initialize();
+    COMMON_Initialize();
 
 
     EVIC_Initialize();

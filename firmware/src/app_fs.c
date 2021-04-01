@@ -6,6 +6,7 @@
  *******************************************************************************/
 
 #include "app_fs.h"
+#include "common.h"
 
 #define SDCARD_DEV_NAME      SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0
 #define SDCARD_MOUNT_NAME    SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0
@@ -45,7 +46,7 @@ static void APP_FS_SysFSEventHandler(SYS_FS_EVENT event,
 }
 
 void APP_FS_Initialize(void) {
-    /* Place the state machine in its initial state. */
+    /* Place the state machine in its initial state */
     app_fs.state = APP_FS_STATE_MOUNT_WAIT;
 
     /* Register the File System Event handler */
@@ -55,7 +56,7 @@ void APP_FS_Initialize(void) {
 
 void APP_FS_Tasks(void) {
 
-    /* Check the application's current state. */
+    /* Check the application's current state */
     switch (app_fs.state) {
             /* State machine waits for the sdcard to be mounted */
         case APP_FS_STATE_MOUNT_WAIT:
@@ -69,7 +70,7 @@ void APP_FS_Tasks(void) {
         case APP_FS_STATE_IDLE:
             break;
 
-            /* The default state should never be executed. */
+            /* The default state should never be executed */
         default:
             break;
     }

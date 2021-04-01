@@ -1,0 +1,21 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: gfx_disp_pdatm4301b_480x272}
+children:
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: gfx_display}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_hal}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: gfx_display}
+- type: ElementPosition
+  attributes: {x: '333', y: '437', id: gfx_disp_pdatm4301b_480x272}

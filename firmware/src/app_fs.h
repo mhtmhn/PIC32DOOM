@@ -17,8 +17,9 @@
 
 /* Application state data type */
 typedef enum {
-    /* Application's state machine's initial state. */
-    /* State machine waits for the sdcard to be mounted */
+    /* Application state machine's initial state,
+     * waits for the sdcard to be mounted 
+     */
     APP_FS_STATE_MOUNT_WAIT = 0,
 
     /* State machine idle state */

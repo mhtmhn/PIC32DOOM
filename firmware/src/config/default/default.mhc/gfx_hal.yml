@@ -1,0 +1,282 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: gfx_hal}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: DisplayBacklightDisable}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '1'}
+  - type: Integer
+    attributes: {id: DisplayBacklightEnable}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '1'}
+  - type: Boolean
+    attributes: {id: DisplayChipSelectPolarity}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'true'}
+  - type: Boolean
+    attributes: {id: DisplayDataEnable}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'true'}
+  - type: Boolean
+    attributes: {id: DisplayDataEnablePolarity}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'true'}
+  - type: Integer
+    attributes: {id: DisplayDataWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '16'}
+  - type: Boolean
+    attributes: {id: DisplayHSYNCNegative}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'false'}
+  - type: Integer
+    attributes: {id: DisplayHeight}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '272'}
+  - type: Integer
+    attributes: {id: DisplayHorzBackPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayHorzFrontPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '2'}
+  - type: Menu
+    attributes: {id: DisplayHorzMenu}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: DisplayHorzPulseWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '41'}
+  - type: Boolean
+    attributes: {id: DisplayInvLeftShift}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'false'}
+  - type: String
+    attributes: {id: DisplayName}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: PDA TM4301B}
+  - type: Boolean
+    attributes: {id: DisplayResetPolarity}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'true'}
+  - type: Boolean
+    attributes: {id: DisplayUseChipSelect}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'false'}
+  - type: Boolean
+    attributes: {id: DisplayUseReset}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'true'}
+  - type: Boolean
+    attributes: {id: DisplayVSYNCNegative}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: 'false'}
+  - type: Integer
+    attributes: {id: DisplayVertBackPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayVertFrontPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '2'}
+  - type: Menu
+    attributes: {id: DisplayVertMenu}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: DisplayVertPulseWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '10'}
+  - type: Integer
+    attributes: {id: DisplayWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '480'}
+  - type: String
+    attributes: {id: DriverInfoFunction}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: driverGLCDInfoGet}
+  - type: String
+    attributes: {id: DriverInitFunction}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: driverGLCDContextInitialize}
+  - type: Integer
+    attributes: {id: HardwareLayerCountHint}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_driver_glcd, value: '1'}
+  - type: Integer
+    attributes: {id: PixelClock}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '13333333'}
+  - type: Integer
+    attributes: {id: PixelClockHint}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_driver_glcd, value: '13333333'}
+  - type: String
+    attributes: {id: ProcInfoFunction}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: procNANO2DInfoGet}
+  - type: String
+    attributes: {id: ProcInitFunction}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: procNANO2DContextInitialize}
+  - type: Integer
+    attributes: {id: RefreshRate}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_hal, value: '88'}
+- type: Attachments
+  children:
+  - type: DirectDependency
+    attributes: {id: gfx_display}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_disp_pdatm4301b_480x272}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: gfx_display}
+  - type: DirectDependency
+    attributes: {id: gfx_display_driver}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_driver_glcd}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: gfx_driver_glcd}
+  - type: DirectDependency
+    attributes: {id: gfx_graphics_processor}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_driver_2dgpu}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: gfx_driver_2dgpu}
+- type: ElementPosition
+  attributes: {x: '533', y: '437', id: gfx_hal}

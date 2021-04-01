@@ -6,6 +6,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
+- generatedChecksum: null
+  logicalPath: ''
+  name: app_lcd.c
+  physicalPath: ..\..
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: null
+- generatedChecksum: null
+  logicalPath: ''
+  name: common.c
+  physicalPath: ..\..
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: null
 - generatedChecksum: 08652B594EF55154284FC067A703DF57
   logicalPath: config\default\system\fs\fat_fs\hardware_access
   name: diskio.c
@@ -13,6 +27,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 08652B594EF55154284FC067A703DF57
+- generatedChecksum: 44FC1A5EF45DEF4BD7714F2872AE3F0B
+  logicalPath: config\default\gfx\driver\glcd
+  name: drv_gfx_glcd.c
+  physicalPath: gfx\driver\controller\glcd
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 44FC1A5EF45DEF4BD7714F2872AE3F0B
 - generatedChecksum: 875B9DA0764A056F51F47040A3214FCA
   logicalPath: config\default\driver\sdmmc
   name: drv_sdmmc.c
@@ -48,20 +69,237 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9E153A6D4F8E0EA1F6901BAED7DD80FD
-- generatedChecksum: 02E5883B1A1A1380D9E01AD3522C11A2
+- generatedChecksum: C65F05EA9DE59F7A1486CA9CED0D6213
+  logicalPath: config\default\gfx\hal
+  name: gfx.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: C65F05EA9DE59F7A1486CA9CED0D6213
+- generatedChecksum: 4EA7259468923DABE301A422CAEBE314
+  logicalPath: config\default\gfx\hal
+  name: gfx_color.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 4EA7259468923DABE301A422CAEBE314
+- generatedChecksum: E34560DD240009C68D350A6B57934EF4
+  logicalPath: config\default\gfx\hal
+  name: gfx_color_blend.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: E34560DD240009C68D350A6B57934EF4
+- generatedChecksum: 09FB21EB2B1EFCFF24A9C13F80DAC448
+  logicalPath: config\default\gfx\hal
+  name: gfx_color_convert.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 09FB21EB2B1EFCFF24A9C13F80DAC448
+- generatedChecksum: F81E452CF8D730615EB0D16B0D833049
+  logicalPath: config\default\gfx\hal
+  name: gfx_color_lerp.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: F81E452CF8D730615EB0D16B0D833049
+- generatedChecksum: A5BEC115024643C8913475F1AA9E2E1D
+  logicalPath: config\default\gfx\hal
+  name: gfx_color_value.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: A5BEC115024643C8913475F1AA9E2E1D
+- generatedChecksum: FA350C90AF064CC32A47B1225B9F289D
+  logicalPath: config\default\gfx\hal
+  name: gfx_context.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: FA350C90AF064CC32A47B1225B9F289D
+- generatedChecksum: 74947F2D049E6191C286CB0040DC8125
+  logicalPath: config\default\gfx\hal
+  name: gfx_default_impl.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 74947F2D049E6191C286CB0040DC8125
+- generatedChecksum: C0355E3FE99CF36F5DF875EEE82FC548
+  logicalPath: config\default\gfx\hal
+  name: gfx_display.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: C0355E3FE99CF36F5DF875EEE82FC548
+- generatedChecksum: 50B9B57BC0FF45B0C6C4B0A9829FB5DF
+  logicalPath: config\default\gfx\hal
+  name: gfx_display_def.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 50B9B57BC0FF45B0C6C4B0A9829FB5DF
+- generatedChecksum: 2C6210AEB9C2E8B07F5DDBFD2880BD70
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_arc.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 2C6210AEB9C2E8B07F5DDBFD2880BD70
+- generatedChecksum: 1D58F136197508C3C48D9439E9034975
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_blit.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 1D58F136197508C3C48D9439E9034975
+- generatedChecksum: 66A7FFBC033C61E02B46AE24AFF8FF45
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_circle.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 66A7FFBC033C61E02B46AE24AFF8FF45
+- generatedChecksum: 0AF55C42B8EA5449F5E721E18BA5F593
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_ellipse.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 0AF55C42B8EA5449F5E721E18BA5F593
+- generatedChecksum: 07AA815A80029F0D81A22B67BCE139FA
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_line.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 07AA815A80029F0D81A22B67BCE139FA
+- generatedChecksum: 91DF60D07073EB583790031F57063E46
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_pixel.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 91DF60D07073EB583790031F57063E46
+- generatedChecksum: B15766483E8E09B713E1F50A1CB0A093
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_rect.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: B15766483E8E09B713E1F50A1CB0A093
+- generatedChecksum: 6EE55DE1670BED81AEC9960CD63F4E5D
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_stretchblit.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 6EE55DE1670BED81AEC9960CD63F4E5D
+- generatedChecksum: F42A5816B2F21BDA61BA13A05D6CE391
+  logicalPath: config\default\gfx\hal
+  name: gfx_driver_def.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: F42A5816B2F21BDA61BA13A05D6CE391
+- generatedChecksum: 5EB05C2DA68ABF74A8F5B9165CB923AA
+  logicalPath: config\default\gfx\hal
+  name: gfx_driver_interface.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 5EB05C2DA68ABF74A8F5B9165CB923AA
+- generatedChecksum: 015A908955FADA2A1816C035F0BDBD22
+  logicalPath: config\default\gfx\hal
+  name: gfx_get.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 015A908955FADA2A1816C035F0BDBD22
+- generatedChecksum: F728464D04EADBADA6B396CA535DA422
+  logicalPath: config\default\gfx\hal
+  name: gfx_interface.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: F728464D04EADBADA6B396CA535DA422
+- generatedChecksum: DB9CBAA78ABD21EBFE4D34F92C5196F3
+  logicalPath: config\default\gfx\hal
+  name: gfx_layer.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: DB9CBAA78ABD21EBFE4D34F92C5196F3
+- generatedChecksum: 30CB160E02AB54FE14E9B0706625A606
+  logicalPath: config\default\gfx\hal
+  name: gfx_math.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 30CB160E02AB54FE14E9B0706625A606
+- generatedChecksum: 3C2CAEAB342B44C6AAD9A23EAC50C6A0
+  logicalPath: config\default\gfx\hal
+  name: gfx_pixel_buffer.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 3C2CAEAB342B44C6AAD9A23EAC50C6A0
+- generatedChecksum: C1C89F8EDABF9A8CFE51B212FEED0E12
+  logicalPath: config\default\gfx\hal
+  name: gfx_processor_def.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: C1C89F8EDABF9A8CFE51B212FEED0E12
+- generatedChecksum: 19E261D65453952993C51277EB98F6A5
+  logicalPath: config\default\gfx\hal
+  name: gfx_processor_interface.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 19E261D65453952993C51277EB98F6A5
+- generatedChecksum: 4F8FA3DC39965EB26234F36F61F64C64
+  logicalPath: config\default\gfx\hal
+  name: gfx_rect.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 4F8FA3DC39965EB26234F36F61F64C64
+- generatedChecksum: DAFFD251A538DBC64D8333FEF4B05305
+  logicalPath: config\default\gfx\hal
+  name: gfx_set.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: DAFFD251A538DBC64D8333FEF4B05305
+- generatedChecksum: 199F45E462662B5BB25B06BCCFA92C4B
+  logicalPath: config\default\gfx\hal
+  name: gfx_util.c
+  physicalPath: gfx\hal\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 199F45E462662B5BB25B06BCCFA92C4B
+- generatedChecksum: 19E679FE89EE5C7AA23D02E77B4524D4
   logicalPath: config\default
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 02E5883B1A1A1380D9E01AD3522C11A2
-- generatedChecksum: 78CDBF4EC52E491755B76CF5D82FCAA8
+  userChecksum: 19E679FE89EE5C7AA23D02E77B4524D4
+- generatedChecksum: 32DDE1DCC265EF0334E2B48ABB46B143
   logicalPath: config\default
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 78CDBF4EC52E491755B76CF5D82FCAA8
+  userChecksum: 32DDE1DCC265EF0334E2B48ABB46B143
+- generatedChecksum: 8F5212F4ED5F5D93618797A94D7E6847
+  logicalPath: config\default\gfx\driver\2dgpu
+  name: libnano2D_hal.c
+  physicalPath: gfx\driver\processor\2dgpu
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 8F5212F4ED5F5D93618797A94D7E6847
 - generatedChecksum: null
   logicalPath: ''
   name: main.c
@@ -111,13 +349,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 84A02BDC4B7228AA0FCDC98B7C2A04A0
-- generatedChecksum: 0C7662C94AFBF7173928FC78E114D9C9
+- generatedChecksum: 667343AEBF76E570325B30F67DCE0AE0
   logicalPath: config\default\peripheral\evic
   name: plib_evic.c
   physicalPath: peripheral\evic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 0C7662C94AFBF7173928FC78E114D9C9
+  userChecksum: 667343AEBF76E570325B30F67DCE0AE0
+- generatedChecksum: 953D0BCD584CE6BAAF2E253DBA03E02E
+  logicalPath: config\default\gfx\driver\glcd
+  name: plib_glcd.c
+  physicalPath: gfx\driver\controller\glcd
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 953D0BCD584CE6BAAF2E253DBA03E02E
 - generatedChecksum: 6DDC03741D3ADAE5CEB7A213B0C79E44
   logicalPath: config\default\peripheral\gpio
   name: plib_gpio.c
@@ -181,13 +426,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
-- generatedChecksum: CC4361D17542C7DEB4E53F48B48DDDA7
+- generatedChecksum: C35F4D2151C4530C3722349B6271BA7E
   logicalPath: config\default
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CC4361D17542C7DEB4E53F48B48DDDA7
+  userChecksum: C35F4D2151C4530C3722349B6271BA7E
 - generatedChecksum: CD1794BE8A9148BA4C835E811CBD7164
   logicalPath: config\default\stdio
   name: xc32_monitor.c
@@ -202,20 +447,34 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: null
-- generatedChecksum: 6DBC03785D34E3F66BE5C4C1D6BC6400
+- generatedChecksum: null
+  logicalPath: ''
+  name: app_lcd.h
+  physicalPath: ..\..
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: null
+- generatedChecksum: null
+  logicalPath: ''
+  name: common.h
+  physicalPath: ..\..
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: null
+- generatedChecksum: 1E0DD5871CF4D01EF227F820985AC1AE
   logicalPath: config\default
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6DBC03785D34E3F66BE5C4C1D6BC6400
-- generatedChecksum: 1A7B53DE9A20BA3846E029E839C27723
+  userChecksum: 1E0DD5871CF4D01EF227F820985AC1AE
+- generatedChecksum: ED3E99099F710F1624E06E103E2F6CA5
   logicalPath: config\default
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1A7B53DE9A20BA3846E029E839C27723
+  userChecksum: ED3E99099F710F1624E06E103E2F6CA5
 - generatedChecksum: E189C26B2269F8DE46033CCD0621958D
   logicalPath: config\default
   name: device.h
@@ -251,6 +510,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CC7DFCC51CD25171A3E400E18969354F
+- generatedChecksum: 5670FD6FA5E47044D1F36E074BB5BFC6
+  logicalPath: config\default\gfx\driver\glcd
+  name: drv_gfx_glcd.h
+  physicalPath: gfx\driver\controller\glcd
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 5670FD6FA5E47044D1F36E074BB5BFC6
 - generatedChecksum: 7F812CE063F8775E4754590A27A28529
   logicalPath: config\default\driver\sdmmc
   name: drv_sdmmc.h
@@ -286,6 +552,181 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: D9A040CE610ED3F9283F4BA6A13DADF9
+- generatedChecksum: E99545D39A6FE8BFDB7E6EC520BDA83A
+  logicalPath: config\default\gfx\hal
+  name: gfx.h
+  physicalPath: gfx\hal
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E99545D39A6FE8BFDB7E6EC520BDA83A
+- generatedChecksum: 49739651C9813782BA1E7397A3E6C0B6
+  logicalPath: config\default\gfx\hal
+  name: gfx_color.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 49739651C9813782BA1E7397A3E6C0B6
+- generatedChecksum: 7A18A9FBBB5BBBBB9CA85DEB314E1874
+  logicalPath: config\default\gfx\hal
+  name: gfx_common.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 7A18A9FBBB5BBBBB9CA85DEB314E1874
+- generatedChecksum: 3B880B57AC0123336BA76F97C7039644
+  logicalPath: config\default\gfx\hal
+  name: gfx_config.h
+  physicalPath: gfx\hal
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 3B880B57AC0123336BA76F97C7039644
+- generatedChecksum: 691F883E2E8CC3E94C9C8E78F0F20B04
+  logicalPath: config\default\gfx\hal
+  name: gfx_context.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 691F883E2E8CC3E94C9C8E78F0F20B04
+- generatedChecksum: 4F0B70657785F2B5919E82EFF7D85A0A
+  logicalPath: config\default\gfx\hal
+  name: gfx_default_impl.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 4F0B70657785F2B5919E82EFF7D85A0A
+- generatedChecksum: FAE6F3147910E36EDFC544D6C9AD46B2
+  logicalPath: config\default\gfx\hal
+  name: gfx_display.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: FAE6F3147910E36EDFC544D6C9AD46B2
+- generatedChecksum: E90C2CA68F07DDAB67DB1F2AF29DC789
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E90C2CA68F07DDAB67DB1F2AF29DC789
+- generatedChecksum: D0333F8134F0A74015B7E6DAF49C6193
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_arc.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: D0333F8134F0A74015B7E6DAF49C6193
+- generatedChecksum: 624ACCBCF5F4B329E8FD95DC5782B361
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_blit.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 624ACCBCF5F4B329E8FD95DC5782B361
+- generatedChecksum: F6648D93F8FFF1BDFB7B67BB4C107CBF
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_circle.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: F6648D93F8FFF1BDFB7B67BB4C107CBF
+- generatedChecksum: 41DE91CBDB85264AAC2CC555FFDB9DA4
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_ellipse.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 41DE91CBDB85264AAC2CC555FFDB9DA4
+- generatedChecksum: 363815CD51BB97F6E9B7A75310C0A3B2
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_line.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 363815CD51BB97F6E9B7A75310C0A3B2
+- generatedChecksum: 1BB3AC8389883BBF578F5DE2FEE5FD75
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_pixel.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 1BB3AC8389883BBF578F5DE2FEE5FD75
+- generatedChecksum: 840A208F9218E03BB6400ACAA008EC73
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_rect.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 840A208F9218E03BB6400ACAA008EC73
+- generatedChecksum: D948B8C2302EB5E872B2092D83246BF7
+  logicalPath: config\default\gfx\hal
+  name: gfx_draw_stretchblit.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: D948B8C2302EB5E872B2092D83246BF7
+- generatedChecksum: 217ED93B2DAD9F80626A27626E21BEE1
+  logicalPath: config\default\gfx\hal
+  name: gfx_driver_interface.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 217ED93B2DAD9F80626A27626E21BEE1
+- generatedChecksum: A13857DDDCBA73D10C6AA747EBE14A39
+  logicalPath: config\default\gfx\hal
+  name: gfx_hal.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: A13857DDDCBA73D10C6AA747EBE14A39
+- generatedChecksum: 715237D9C348F2548408F9A85818BD93
+  logicalPath: config\default\gfx\hal
+  name: gfx_interface.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 715237D9C348F2548408F9A85818BD93
+- generatedChecksum: 1317F9E587CB85667CB2C5C43A0A5BA5
+  logicalPath: config\default\gfx\hal
+  name: gfx_layer.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 1317F9E587CB85667CB2C5C43A0A5BA5
+- generatedChecksum: 2BA643FA76E636B23EF1EDFD97221B1B
+  logicalPath: config\default\gfx\hal
+  name: gfx_math.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 2BA643FA76E636B23EF1EDFD97221B1B
+- generatedChecksum: 8010BD8FCB6860C10E2F70FA3BD1FC19
+  logicalPath: config\default\gfx\hal
+  name: gfx_pixel_buffer.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 8010BD8FCB6860C10E2F70FA3BD1FC19
+- generatedChecksum: 2422B92079A9872D9812A12374BCDC68
+  logicalPath: config\default\gfx\hal
+  name: gfx_processor_interface.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 2422B92079A9872D9812A12374BCDC68
+- generatedChecksum: 28705632B15214D02AB3A797E60FCAB1
+  logicalPath: config\default\gfx\hal
+  name: gfx_rect.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 28705632B15214D02AB3A797E60FCAB1
+- generatedChecksum: FA9FE4C763B7C8BF7B300D6C5ABFA302
+  logicalPath: config\default\gfx\hal
+  name: gfx_util.h
+  physicalPath: gfx\hal\inc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: FA9FE4C763B7C8BF7B300D6C5ABFA302
 - generatedChecksum: 4CF4A86296482D5331331BA301C20BB2
   logicalPath: config\default
   name: interrupts.h
@@ -293,6 +734,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 4CF4A86296482D5331331BA301C20BB2
+- generatedChecksum: 345BEA5052E4CA070A40A7D4505E3257
+  logicalPath: config\default\gfx\driver\2dgpu
+  name: libnano2D.h
+  physicalPath: gfx\driver\processor\2dgpu
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 345BEA5052E4CA070A40A7D4505E3257
 - generatedChecksum: F0AD88762263B7CB89B02AB4F5876059
   logicalPath: config\default\osal
   name: osal.h
@@ -356,6 +804,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: D1E6260A2C117FBD35FB8C9CCB5DFD2F
+- generatedChecksum: 6914772A370CB5F2D18F36781BD5FA9D
+  logicalPath: config\default\gfx\driver\glcd
+  name: plib_glcd.h
+  physicalPath: gfx\driver\controller\glcd
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6914772A370CB5F2D18F36781BD5FA9D
 - generatedChecksum: 62017ADAF0D1A0EBD5A3EB604B3FF320
   logicalPath: config\default\peripheral\gpio
   name: plib_gpio.h
@@ -525,7 +980,10 @@ files:
   type: LINKER
   userChecksum: 71D25A08D2851F5BA41668F755302F92
 format_version: v1.0
-libraries: []
+libraries:
+- name: libnano2d.a
+  path: gfx/driver/processor/2dgpu/lib
+  security: NON_SECURE
 settings:
 - append: true
   category: C32
@@ -550,7 +1008,7 @@ settings:
   delimiter: ''
   key: heap-size
   security: NON_SECURE
-  value: '512'
+  value: '16384'
 - append: false
   category: C32-LD
   delimiter: ''

@@ -893,6 +893,60 @@ children:
       children:
       - type: User
         attributes: {value: DIGITAL}
+  - type: File
+    attributes: {id: CACHE_HEADER_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_LOCAL_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_PIC32MZ_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_SOURCE_PIC32MZ_C}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_SOURCE_PIC32MZ_S}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: CACHE_SYSTEM_DEF_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: CAN1_CLOCK_FREQUENCY}
     children:
@@ -1035,6 +1089,8 @@ children:
     children:
     - type: Values
       children:
+      - type: Dynamic
+        attributes: {id: gfx_driver_glcd, value: 'true'}
       - type: User
         attributes: {value: 'true'}
   - type: String
@@ -1170,6 +1226,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '200000000'}
+  - type: File
+    attributes: {id: DEVICE_CACHE_H}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: DMAC_CLOCK_FREQUENCY}
     children:
@@ -1296,6 +1361,27 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: SDHC_InterruptHandler}
+  - type: Boolean
+    attributes: {id: EVIC_192_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: EVIC_192_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: String
+    attributes: {id: EVIC_192_INTERRUPT_HANDLER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: GLCD_Interrupt_Handler}
   - type: Boolean
     attributes: {id: EVIC_1_ENABLE_GENERATE}
     children:
@@ -1457,6 +1543,34 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '200000000'}
+  - type: Boolean
+    attributes: {id: GLCD_INTERRUPT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_driver_glcd, value: 'true'}
+  - type: Boolean
+    attributes: {id: GLCD_INTERRUPT_ENABLE_UPDATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: String
+    attributes: {id: GLCD_INTERRUPT_HANDLER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_driver_glcd, value: GLCD_Interrupt_Handler}
+  - type: Boolean
+    attributes: {id: GLCD_INTERRUPT_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: gfx_driver_glcd, value: 'true'}
   - type: Integer
     attributes: {id: GPU_CLOCK_FREQUENCY}
     children:
@@ -2216,6 +2330,22 @@ children:
       children:
       - type: User
         attributes: {value: 'true'}
+  - type: Setting
+    attributes: {id: XC32_HEAP}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: value}
+        children:
+        - {type: Value, value: '16384'}
+  - type: Integer
+    attributes: {id: XC32_HEAP_SIZE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '16384'}
   - type: KeyValueSet
     attributes: {id: clkSvcMode}
     children:
