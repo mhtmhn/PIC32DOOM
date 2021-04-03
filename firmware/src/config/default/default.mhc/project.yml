@@ -27,13 +27,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 08652B594EF55154284FC067A703DF57
-- generatedChecksum: 44FC1A5EF45DEF4BD7714F2872AE3F0B
+- generatedChecksum: 02D285AA3934D3D11AFC2BD387C31A74
   logicalPath: config\default\gfx\driver\glcd
   name: drv_gfx_glcd.c
   physicalPath: gfx\driver\controller\glcd
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 44FC1A5EF45DEF4BD7714F2872AE3F0B
+  userChecksum: 02D285AA3934D3D11AFC2BD387C31A74
 - generatedChecksum: 875B9DA0764A056F51F47040A3214FCA
   logicalPath: config\default\driver\sdmmc
   name: drv_sdmmc.c
@@ -132,13 +132,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C0355E3FE99CF36F5DF875EEE82FC548
-- generatedChecksum: 50B9B57BC0FF45B0C6C4B0A9829FB5DF
+- generatedChecksum: D6F5172CE8FD045E95E2C470C890EA8F
   logicalPath: config\default\gfx\hal
   name: gfx_display_def.c
   physicalPath: gfx\hal\src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 50B9B57BC0FF45B0C6C4B0A9829FB5DF
+  userChecksum: D6F5172CE8FD045E95E2C470C890EA8F
 - generatedChecksum: 2C6210AEB9C2E8B07F5DDBFD2880BD70
   logicalPath: config\default\gfx\hal
   name: gfx_draw_arc.c
@@ -292,7 +292,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 32DDE1DCC265EF0334E2B48ABB46B143
+  userChecksum: A859C5FA7B7C2AAA01FDA99855DC2965
 - generatedChecksum: 8F5212F4ED5F5D93618797A94D7E6847
   logicalPath: config\default\gfx\driver\2dgpu
   name: libnano2D_hal.c
@@ -328,13 +328,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DA10C8889278A796D0EE4C6096B57C3
-- generatedChecksum: 8D13524A446A05472964A23428A0EEFE
+- generatedChecksum: 6AC1B73576F33F2B7969D92FB2A8A586
   logicalPath: config\default\peripheral\clk
   name: plib_clk.c
   physicalPath: peripheral\clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8D13524A446A05472964A23428A0EEFE
+  userChecksum: 6AC1B73576F33F2B7969D92FB2A8A586
 - generatedChecksum: 2FEFEA0D4E94F5A5F3D76BAEC3D602E5
   logicalPath: config\default\peripheral\coretimer
   name: plib_coretimer.c

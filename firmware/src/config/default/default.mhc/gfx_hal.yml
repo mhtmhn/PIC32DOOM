@@ -74,15 +74,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: gfx_hal, value: '2'}
-  - type: Menu
-    attributes: {id: DisplayHorzMenu}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: DisplayHorzPulseWidth}
     children:
@@ -139,6 +130,8 @@ children:
       children:
       - type: Dynamic
         attributes: {id: gfx_hal, value: '2'}
+      - type: User
+        attributes: {value: '192'}
   - type: Integer
     attributes: {id: DisplayVertFrontPorch}
     children:
@@ -146,15 +139,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: gfx_hal, value: '2'}
-  - type: Menu
-    attributes: {id: DisplayVertMenu}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: DisplayVertPulseWidth}
     children:
@@ -183,6 +167,24 @@ children:
       children:
       - type: Dynamic
         attributes: {id: gfx_hal, value: driverGLCDContextInitialize}
+  - type: Menu
+    attributes: {id: GFXRTOSMenu}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: GFX_SYS_RTOS_TASK_C}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: HardwareLayerCountHint}
     children:
@@ -193,23 +195,17 @@ children:
   - type: Integer
     attributes: {id: PixelClock}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: gfx_hal, value: '13333333'}
+        attributes: {id: gfx_hal, value: '15001464'}
   - type: Integer
     attributes: {id: PixelClockHint}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: gfx_driver_glcd, value: '13333333'}
+        attributes: {id: gfx_driver_glcd, value: '15001464'}
   - type: String
     attributes: {id: ProcInfoFunction}
     children:
@@ -227,16 +223,10 @@ children:
   - type: Integer
     attributes: {id: RefreshRate}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: gfx_hal, value: '88'}
+        attributes: {id: gfx_hal, value: '60'}
 - type: Attachments
   children:
   - type: DirectDependency

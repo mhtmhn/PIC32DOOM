@@ -95,6 +95,16 @@ void CLK_Initialize( void )
     REFO4CONSET = 0x00008000;
 
     /* Set up Reference Clock 5 */
+    /* REFO5CON register */
+    /* ROSEL =  SYSCLK */
+    /* DIVSWEN = 1 */
+    /* RODIV = 6 */
+    REFO5CON = 0x60200;
+
+    /* REFO5TRIM register */
+    /* ROTRIM = 341 */
+    REFO5TRIM = 0xaa800000;
+
     /* Enable oscillator (ON bit) */
     REFO5CONSET = 0x00008000;
 

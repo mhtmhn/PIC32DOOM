@@ -893,60 +893,6 @@ children:
       children:
       - type: User
         attributes: {value: DIGITAL}
-  - type: File
-    attributes: {id: CACHE_HEADER_H}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
-  - type: File
-    attributes: {id: CACHE_LOCAL_H}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
-  - type: File
-    attributes: {id: CACHE_PIC32MZ_H}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
-  - type: File
-    attributes: {id: CACHE_SOURCE_PIC32MZ_C}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
-  - type: File
-    attributes: {id: CACHE_SOURCE_PIC32MZ_S}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
-  - type: File
-    attributes: {id: CACHE_SYSTEM_DEF_H}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: CAN1_CLOCK_FREQUENCY}
     children:
@@ -1101,18 +1047,9 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '200000000'}
       - type: User
-        attributes: {value: '200000000'}
+        attributes: {value: '15001464'}
   - type: Combo
     attributes: {id: CONFIG_SYS_CLK_REFCLK_SOURCE4}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
-  - type: Combo
-    attributes: {id: CONFIG_SYS_CLK_REFCLK_SOURCE5}
     children:
     - type: Attributes
       children:
@@ -1132,12 +1069,10 @@ children:
   - type: Integer
     attributes: {id: CONFIG_SYS_CLK_RODIV5}
     children:
-    - type: Attributes
+    - type: Values
       children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
+      - type: User
+        attributes: {value: '6'}
   - type: Integer
     attributes: {id: CONFIG_SYS_CLK_ROTRIM4}
     children:
@@ -1150,12 +1085,10 @@ children:
   - type: Integer
     attributes: {id: CONFIG_SYS_CLK_ROTRIM5}
     children:
-    - type: Attributes
+    - type: Values
       children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
+      - type: User
+        attributes: {value: '341'}
   - type: Boolean
     attributes: {id: CORE_TIMER_INTERRUPT_ENABLE}
     children:
@@ -1226,15 +1159,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '200000000'}
-  - type: File
-    attributes: {id: DEVICE_CACHE_H}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: enabled}
-        children:
-        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: DMAC_CLOCK_FREQUENCY}
     children:
@@ -1829,7 +1753,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x0'}
+        attributes: {id: core, value: '0xaa800000'}
   - type: Integer
     attributes: {id: REFO5_CLOCK_FREQUENCY}
     children:
@@ -1850,7 +1774,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x200'}
+        attributes: {id: core, value: '0x60200'}
   - type: Integer
     attributes: {id: RNG_CLOCK_FREQUENCY}
     children:

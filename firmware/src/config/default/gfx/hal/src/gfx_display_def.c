@@ -47,7 +47,7 @@ GFX_DisplayInfo GFX_DisplayInfoList[] =
 		    },
 		    {
 				10,  // vertical pulse width
-				2,  // vertical back porch
+				192,  // vertical back porch
 				2,  // vertical front porch
 		    },
 			0,  // inverted left shift
