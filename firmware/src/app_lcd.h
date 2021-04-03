@@ -14,6 +14,13 @@
 #include <stdlib.h>
 #include "configuration.h"
 #include "definitions.h"
+#include "gfx/driver/processor/2dgpu/libnano2D.h"
+
+/* LCD Parameters */
+#define LCD_WIDTH 480
+#define LCD_HEIGHT 272
+#define LCD_BITS_PERPIXEL 32
+#define LCD_FRAME_BYTES ((LCD_WIDTH*LCD_HEIGHT*LCD_BITS_PERPIXEL)/8)
 
 /* Application state data type */
 typedef enum {
@@ -30,8 +37,28 @@ typedef struct {
     /* The application's current state */
     APP_LCD_STATES state;
 
+    /* nano2D GPU variables */
+    /* GLCD layer 0*/
+    n2d_buffer_t glcdlayer0;
+
+    /* GLCD layer 0 rectangle */
+    n2d_rectangle_t rectglcd0;
+
+    /* Framebuffer */
+    n2d_buffer_t framebuffer;
+
+    /* Framebuffer rectangle */
+    n2d_rectangle_t rectfbuff;
+
+    /* Framebuffer orientation */
+    n2d_orientation_t orientation;
+
+    /* Scaling */
+    bool scale;
+
 } APP_LCD_DATA;
 
+void APP_LCD_VSync_Handler(void);
 void APP_LCD_Initialize(void);
 void APP_LCD_Tasks(void);
 

@@ -6,6 +6,7 @@
  *******************************************************************************/
 
 #include "common.h"
+#include "peripheral/evic/plib_evic.h"
 
 /* Application data */
 COMMON_DATA common;
@@ -30,4 +31,21 @@ void COMMON_Tasks(void) {
         default:
             break;
     }
+}
+
+/* APP_LCD Interface*/
+
+/* Disable VSync*/
+inline void COMMON_APP_LCD_VSyncInterruptDisable(void) {
+    GLCDINTbits.VSYNCINT = 0;
+}
+
+/* Enable VSync, this also triggers a blit of the frame buffer*/
+inline void COMMON_APP_LCD_VSyncInterruptEnable(void) {
+    GLCDINTbits.VSYNCINT = 1;
+}
+
+/* Update on Vsync, called inside the VSync Handler */
+__WEAK void COMMON_APP_LCD_UpdateOnVSync(void) {
+
 }

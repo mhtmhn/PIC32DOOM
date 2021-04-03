@@ -34,4 +34,14 @@ typedef struct {
 void COMMON_Initialize(void);
 void COMMON_Tasks(void);
 
+/* APP_LCD Interface*/
+/* Disable VSync*/
+inline void COMMON_APP_LCD_VSyncInterruptDisable(void);
+
+/* Enable VSync, this also triggers a blit of the frame buffer*/
+inline void COMMON_APP_LCD_VSyncInterruptEnable(void);
+
+/* Update on Vsync */
+void COMMON_APP_LCD_UpdateOnVSync(void);
+
 #endif /* _COMMON_H */

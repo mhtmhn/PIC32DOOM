@@ -52,6 +52,7 @@
 #include "configuration.h"
 #include "interrupts.h"
 #include "definitions.h"
+#include "app_lcd.h"
 
 
 // *****************************************************************************
@@ -63,7 +64,6 @@
 
 void CORE_TIMER_InterruptHandler( void );
 void SDHC_InterruptHandler( void );
-void GLCD_Interrupt_Handler( void );
 
 
 
@@ -80,7 +80,7 @@ void __ISR(_SDHC_VECTOR, ipl1SRS) SDHC_Handler (void)
 
 void __ISR(_GLCD_VECTOR, ipl1SRS) GLCD_Handler (void)
 {
-    GLCD_Interrupt_Handler();
+    APP_LCD_VSync_Handler();
 }
 
 
