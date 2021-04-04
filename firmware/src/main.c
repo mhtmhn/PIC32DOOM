@@ -9,14 +9,22 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "definitions.h"
+#include "doom_logo.h"
+#include "../../chocolate_doom/doom.h"
 
 int main(void) {
     /* Initialize all modules */
     SYS_Initialize(NULL);
+    doom_logo();
 
     while (true) {
         /* Maintain state machines */
         SYS_Tasks();
+        if (COMMON_GetTicks() > 2000)
+        {
+            printf("Starting...\r\n");
+            D_DoomMain();
+        }
     }
 
     return (EXIT_FAILURE);

@@ -1,5 +1,5 @@
 /*******************************************************************************
-  MPLAB Harmony Exceptions Source File
+  MPLAB Harmony Filtering Advanced Exception Source File
 
   File Name:
     exceptions.c
@@ -9,16 +9,23 @@
     handler provided by the XC32 compiler.
 
   Description:
-    This file redefines the default _weak_  exception handler with a more debug
-    friendly one. If an unexpected exception occurs the code will stop in a
-    while(1) loop.  The debugger can be halted and two variables _excep_code and
-    _except_addr can be examined to determine the cause and address where the
-    exception occurred.
+    The standard exception handling provided by the compiler's installation is
+    insufficient to handle overflow exception that can happen inside of assembly
+    IIR routines.
+
+    Exceptions are handled by the default code by simply throwing the application
+    into a while (1) loop, which simply ends all processing of the application.
+    This new code attempts to return control back to the application.
+
+    If an overflow exception is trapped, a fall-back return value is written to
+    the $v0 register for use by the IIR primitive that generated the overflow.
+    The application can use +1 (0x7FFF) or Zero, or random noise as the fall-back
+    return value.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -43,36 +50,41 @@
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Included Files
+// Section: Exception handling
 // *****************************************************************************
 // *****************************************************************************
 #include "configuration.h"
-#include "device.h"
 #include "definitions.h"
 #include <stdio.h>
 
+typedef struct _XCPT_FRAME  // access to all major registers from the instruction that caused the exception
+{
+    uint32_t at;
+    uint32_t v0;
+    uint32_t v1;
+    uint32_t a0;
+    uint32_t a1;
+    uint32_t a2;
+    uint32_t a3;
+    uint32_t t0;
+    uint32_t t1;
+    uint32_t t2;
+    uint32_t t3;
+    uint32_t t4;
+    uint32_t t5;
+    uint32_t t6;
+    uint32_t t7;
+    uint32_t t8;
+    uint32_t t9;
+    uint32_t ra;
+    uint32_t lo;
+    uint32_t hi;
+    uint32_t cause;
+    uint32_t status;
+    uint32_t epc;
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Global Data Definitions
-// *****************************************************************************
-// *****************************************************************************
+} XCPT_FRAME;
 
-/*******************************************************************************
-  Exception Reason Data
-
-  <editor-fold defaultstate="expanded" desc="Exception Reason Data">
-
-  Remarks:
-    These global static items are used instead of local variables in the
-    _general_exception_handler function because the stack may not be available
-    if an exception has occured.
-*/
-
-/* Address of instruction that caused the exception. */
-static unsigned int _excep_addr;
-
-/* Enum identifying the cause */
 typedef enum {
     EXCEP_IRQ      =  0, // interrupt
     EXCEP_AdEL     =  4, // address error exception (load or ifetch)
@@ -85,19 +97,22 @@ typedef enum {
     EXCEP_CpU      = 11, // coprocessor unusable
     EXCEP_Overflow = 12, // arithmetic overflow
     EXCEP_Trap     = 13, // trap (possible divide by zero)
-    EXCEP_IS1      = 16, // implementation specfic 1
-    EXCEP_CEU      = 17, // CorExtend Unuseable
+    EXCEP_IS1      = 16, // implementation specific 1
+    EXCEP_CEU      = 17, // CorExtend Unusable
     EXCEP_C2E      = 18, // coprocessor 2
 } excep_code;
 
-/* Code identifying the cause of the exception (CP0 Cause register). */
+// Use static variables, with fixed addresses, since S/W stack can be unstable
 static excep_code _excep_code;
-
-// </editor-fold>
+static unsigned int _excep_addr;
+static uint32_t  _CP0_StatusValue;   // Status value from CP0 Register 12
+static uintptr_t _StackPointerValue; // Stack pointer value
+static uintptr_t _BadVirtualAddress; // Bad address for address exceptions
+static uintptr_t _ReturnAddress;     // Return Address (ra)
 
 /*******************************************************************************
   Function:
-    void _general_exception_handler ( void )
+    void _general_exception_handler ( XCPT_FRAME* const pXFrame )
 
   Description:
     A general exception is any non-interrupt exception which occurs during program
@@ -107,12 +122,31 @@ static excep_code _excep_code;
     Refer to the XC32 User's Guide for additional information.
  */
 
-void __attribute__((noreturn)) _general_exception_handler ( void )
+void __attribute__((nomips16)) _general_exception_handler (XCPT_FRAME* const pXFrame)
 {
-    /* Mask off the ExcCode Field from the Cause Register
-    Refer to the MIPs Software User's manual */
-    _excep_code = (_CP0_GET_CAUSE() & 0x0000007C) >> 2;
-    _excep_addr = _CP0_GET_EPC();
+    _excep_addr = pXFrame->epc;
+    _excep_code = pXFrame->cause;   // capture exception type
+    _excep_code = (_excep_code & 0x0000007C) >> 2;
+
+    _CP0_StatusValue   = _CP0_GET_STATUS();
+    asm volatile("sw $sp,%0" : "=m" (_StackPointerValue));
+    _BadVirtualAddress = _CP0_GET_BADVADDR();
+    _ReturnAddress     = pXFrame->ra;
+
+    if (_excep_code == EXCEP_Overflow)
+    {// Provide fallback return value for filtering primitive throwing an overflow exception.
+        pXFrame->v0 = 0x7FFF;  // set function output to maximum (saturation)
+        pXFrame->v1 = 0x7FFF;  // set intermediate results to maximum (saturation)
+        pXFrame->epc = pXFrame->epc + 4; // set return from exception to next instruction (skip)
+        return;
+    }
+
+    printf("**EXCEPTION:*\r\n"
+           " ECode: %d, EAddr: 0x%08X, CPO Status: 0x%08X\r\n"
+           " Stack Ptr: 0x%08X, Bad Addr: 0x%08X, Return Addr: 0x%08X\r\n"
+           "**EXCEPTION:*\r\n",
+           _excep_code,_excep_addr,_CP0_StatusValue,
+           _StackPointerValue,_BadVirtualAddress,_ReturnAddress);
 
     while (1)
     {
@@ -134,7 +168,7 @@ void __attribute__((noreturn)) _general_exception_handler ( void )
     Refer to the XC32 User's Guide for additional information.
  */
 
-void __attribute__((noreturn)) _bootstrap_exception_handler(void)
+void  __attribute__((noreturn)) _bootstrap_exception_handler(void)
 {
     /* Mask off the ExcCode Field from the Cause Register
     Refer to the MIPs Software User's manual */
@@ -162,7 +196,7 @@ void __attribute__((noreturn)) _bootstrap_exception_handler(void)
     Refer to the XC32 User's Guide for additional information.
  */
 
-void __attribute__((noreturn)) _cache_err_exception_handler(void)
+void  __attribute__((noreturn)) _cache_err_exception_handler(void)
 {
     /* Mask off the ExcCode Field from the Cause Register
     Refer to the MIPs Software User's manual */
@@ -192,7 +226,7 @@ void __attribute__((noreturn)) _cache_err_exception_handler(void)
     Refer to the XC32 User's Guide for additional information.
  */
 
-void __attribute__((noreturn)) _simple_tlb_refill_exception_handler(void)
+void  __attribute__((noreturn)) _simple_tlb_refill_exception_handler(void)
 {
     /* Mask off the ExcCode Field from the Cause Register
     Refer to the MIPs Software User's manual */

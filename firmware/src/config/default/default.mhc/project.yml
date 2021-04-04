@@ -48,13 +48,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: F0A072D602FF8E337A8405478DA60AB0
-- generatedChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
+- generatedChecksum: 6B9BEE27686FC36C62760DBAA363C695
   logicalPath: config\default
   name: exceptions.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
+  userChecksum: 6B9BEE27686FC36C62760DBAA363C695
+- generatedChecksum: C73FC716A50DDB05718577E8BBE06959
+  logicalPath: config\default
+  name: exceptionsHandler.S
+  physicalPath: ''
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: C73FC716A50DDB05718577E8BBE06959
 - generatedChecksum: B2ADAD943E1B2BEEFF974468E2509BD5
   logicalPath: config\default\system\fs\fat_fs\file_system
   name: ff.c

@@ -55,8 +55,8 @@
 #include <CoreFoundation/CFUserNotification.h>
 #endif
 
-#define DEFAULT_RAM 6 /* MiB */
-#define MIN_RAM     6  /* MiB */
+#define DEFAULT_RAM 16 /* MiB */
+#define MIN_RAM     4  /* MiB */
 
 
 typedef struct atexit_listentry_s atexit_listentry_t;
@@ -157,7 +157,7 @@ byte *I_ZoneBase (int *size)
 
     zonemem = AutoAllocMemory(size, default_ram, min_ram);
 
-    printf("zone memory: %p, %x allocated for zone\n", 
+    printf(" zone memory: %p, %x allocated for zone\n", 
            zonemem, *size);
 
     return zonemem;
@@ -268,7 +268,7 @@ void I_Quit (void)
 #define ZENITY_BINARY "/usr/bin/zenity"
 
 // returns non-zero if zenity is available
-
+#if ORIGCODE
 static int ZenityAvailable(void)
 {
     return system(ZENITY_BINARY " --help >/dev/null 2>&1") == 0;
@@ -346,7 +346,7 @@ static int ZenityErrorBox(char *message)
 
     return result;
 }
-
+#endif
 #endif /* !defined(_WIN32) && !defined(__MACOSX__) */
 
 
@@ -450,7 +450,14 @@ void I_Error (char *error, ...)
     }
 #else
     {
+        
+#if ORIGCODE
         ZenityErrorBox(msgbuf);
+#else
+        printf("Exiting...\r\n");
+        printf("Cause: ");
+        printf(msgbuf);
+#endif
     }
 #endif
 

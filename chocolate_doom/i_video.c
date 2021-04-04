@@ -44,6 +44,11 @@ rcsid[] = "$Id: i_x.c,v 1.6 1997/02/03 22:45:10 b1 Exp $";
 //#include "touch.h"   //mohit
 //#include "button.h"  //mohit
 
+#define GFX_RGB565(r, g, b)			((((r & 0xF8) >> 3) << 11) | (((g & 0xFC) >> 2) << 5) | ((b & 0xF8) >> 3))
+#define GFX_RGB565_R(color)			((0xF800 & color) >> 11)
+#define GFX_RGB565_G(color)			((0x07E0 & color) >> 5)
+#define GFX_RGB565_B(color)			(0x001F & color)
+
 // The screen buffer; this is modified to draw things to the screen
 
 byte *I_VideoBuffer = NULL;
@@ -103,7 +108,7 @@ static bool last_button_state;
 
 // run state
 
-static bool run;
+//static bool run;
 
 void I_InitGraphics (void)
 {
@@ -319,9 +324,10 @@ void I_UpdateNoBlit (void)
 
 void I_FinishUpdate (void)
 {
+/*
 	int x, y;
 	byte index;
-/*
+
 	lcd_vsync = false;
 
 	for (y = 0; y < SCREENHEIGHT; y++)
@@ -360,10 +366,9 @@ void I_SetPalette (byte* palette)
 	{
 		c = (col_t*)palette;
 
-/*		rgb565_palette[i] = GFX_RGB565(gammatable[usegamma][c->r],
+		rgb565_palette[i] = GFX_RGB565(gammatable[usegamma][c->r],
 									   gammatable[usegamma][c->g],
 									   gammatable[usegamma][c->b]);
- */ //mohit
 
 		palette += 3;
 	}
@@ -382,11 +387,9 @@ int I_GetPaletteIndex (int r, int g, int b)
 
     for (i = 0; i < 256; ++i)
     {
-        /*
     	color.r = GFX_RGB565_R(rgb565_palette[i]);
     	color.g = GFX_RGB565_G(rgb565_palette[i]);
     	color.b = GFX_RGB565_B(rgb565_palette[i]);
-         */ //mohit
 
         diff = (r - color.r) * (r - color.r)
              + (g - color.g) * (g - color.g)
