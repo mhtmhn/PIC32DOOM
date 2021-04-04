@@ -111,3 +111,36 @@ void APP_LCD_Tasks(void) {
             break;
     }
 }
+
+/* APP_LCD Interface */
+
+/* Disable VSync */
+inline void COMMON_APP_LCD_VSyncInterruptDisable(void) {
+    GLCDINTbits.VSYNCINT = 0;
+}
+
+/* Enable VSync, this also triggers a blit of the frame buffer */
+inline void COMMON_APP_LCD_VSyncInterruptEnable(void) {
+    GLCDINTbits.VSYNCINT = 1;
+}
+
+/* Update on Vsync, called inside the VSync Handler */
+__WEAK void COMMON_APP_LCD_UpdateOnVSync(void) {
+    /* Redefine this weak callback as needed */
+}
+
+/* Get Framebuffer Address */
+void COMMON_APP_LCD_GetFBAddress(void **address) {
+    *address = app_lcd.framebuffer.memory;
+}
+
+/* Get unallocated DDR start address and size */
+size_t COMMON_APP_LCD_GetFreeDDR(void **address) {
+    *address = (void*) ((uint8_t*) app_lcd.framebuffer.memory + LCD_FRAME_BYTES);
+    /* Hardcoded upper bound as specified by libnano2D_hal.c, 
+     * chosen for compatibility with other PIC32MZ Chips
+     * with only 32 MB of internal DDR. 
+     * AFAIK DOOM doesn't need more than 16 MiB.
+     */
+    return (0xA9E00000 - ((uint32_t) *address));
+}

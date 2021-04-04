@@ -29,19 +29,42 @@ typedef enum {
 typedef struct {
     /* The application's current state */
     COMMON_STATES state;
+
+    /* Time in ms since boot */
+    uint32_t ticks;
+
 } COMMON_DATA;
 
 void COMMON_Initialize(void);
 void COMMON_Tasks(void);
 
-/* APP_LCD Interface*/
-/* Disable VSync*/
+/* COMMON Interface Utilities */
+
+/* Time in ms since boot */
+inline uint32_t COMMON_GetTicks(void);
+
+/* Delay/Sleep */
+inline void COMMON_DelayMS(uint32_t);
+
+/* DDR Heap Manager variables*/
+void *UMM_MALLOC_CFG_HEAP_ADDR;
+uint32_t UMM_MALLOC_CFG_HEAP_SIZE;
+
+/* APP_LCD Interface */
+
+/* Disable VSync */
 inline void COMMON_APP_LCD_VSyncInterruptDisable(void);
 
-/* Enable VSync, this also triggers a blit of the frame buffer*/
+/* Enable VSync, this also triggers a blit of the frame buffer */
 inline void COMMON_APP_LCD_VSyncInterruptEnable(void);
 
 /* Update on Vsync */
 void COMMON_APP_LCD_UpdateOnVSync(void);
+
+/* Get Framebuffer Address */
+void COMMON_APP_LCD_GetFBAddress(void **);
+
+/* Get unallocated DDR start address and size */
+size_t COMMON_APP_LCD_GetFreeDDR(void **);
 
 #endif /* _COMMON_H */

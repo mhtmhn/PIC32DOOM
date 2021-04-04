@@ -1,6 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="f1" displayName="Chocolate Doom" projectFiles="true">
+      <itemPath>../../chocolate_doom/am_map.c</itemPath>
+      <itemPath>../../chocolate_doom/am_map.h</itemPath>
+      <itemPath>../../chocolate_doom/config.h</itemPath>
+      <itemPath>../../chocolate_doom/d_englsh.h</itemPath>
+      <itemPath>../../chocolate_doom/d_event.c</itemPath>
+      <itemPath>../../chocolate_doom/d_event.h</itemPath>
+      <itemPath>../../chocolate_doom/d_items.c</itemPath>
+      <itemPath>../../chocolate_doom/d_items.h</itemPath>
+      <itemPath>../../chocolate_doom/d_iwad.c</itemPath>
+      <itemPath>../../chocolate_doom/d_iwad.h</itemPath>
+      <itemPath>../../chocolate_doom/d_loop.c</itemPath>
+      <itemPath>../../chocolate_doom/d_loop.h</itemPath>
+      <itemPath>../../chocolate_doom/d_main.c</itemPath>
+      <itemPath>../../chocolate_doom/d_main.h</itemPath>
+      <itemPath>../../chocolate_doom/d_mode.c</itemPath>
+      <itemPath>../../chocolate_doom/d_mode.h</itemPath>
+      <itemPath>../../chocolate_doom/d_net.c</itemPath>
+      <itemPath>../../chocolate_doom/d_player.h</itemPath>
+      <itemPath>../../chocolate_doom/d_textur.h</itemPath>
+      <itemPath>../../chocolate_doom/d_think.h</itemPath>
+      <itemPath>../../chocolate_doom/d_ticcmd.h</itemPath>
+      <itemPath>../../chocolate_doom/deh_main.h</itemPath>
+      <itemPath>../../chocolate_doom/deh_misc.h</itemPath>
+      <itemPath>../../chocolate_doom/deh_str.h</itemPath>
+      <itemPath>../../chocolate_doom/doom.h</itemPath>
+      <itemPath>../../chocolate_doom/doomdata.h</itemPath>
+      <itemPath>../../chocolate_doom/doomdef.c</itemPath>
+      <itemPath>../../chocolate_doom/doomdef.h</itemPath>
+      <itemPath>../../chocolate_doom/doomfeatures.h</itemPath>
+      <itemPath>../../chocolate_doom/doomkeys.h</itemPath>
+      <itemPath>../../chocolate_doom/doomstat.c</itemPath>
+      <itemPath>../../chocolate_doom/doomstat.h</itemPath>
+      <itemPath>../../chocolate_doom/doomtype.h</itemPath>
+      <itemPath>../../chocolate_doom/dstrings.c</itemPath>
+      <itemPath>../../chocolate_doom/dstrings.h</itemPath>
+      <itemPath>../../chocolate_doom/dummy.c</itemPath>
+      <itemPath>../../chocolate_doom/f_finale.c</itemPath>
+      <itemPath>../../chocolate_doom/f_finale.h</itemPath>
+      <itemPath>../../chocolate_doom/f_wipe.c</itemPath>
+      <itemPath>../../chocolate_doom/f_wipe.h</itemPath>
+      <itemPath>../../chocolate_doom/g_game.c</itemPath>
+      <itemPath>../../chocolate_doom/g_game.h</itemPath>
+      <itemPath>../../chocolate_doom/hu_lib.c</itemPath>
+      <itemPath>../../chocolate_doom/hu_lib.h</itemPath>
+      <itemPath>../../chocolate_doom/hu_stuff.c</itemPath>
+      <itemPath>../../chocolate_doom/hu_stuff.h</itemPath>
+      <itemPath>../../chocolate_doom/i_cdmus.c</itemPath>
+      <itemPath>../../chocolate_doom/i_cdmus.h</itemPath>
+      <itemPath>../../chocolate_doom/i_endoom.c</itemPath>
+      <itemPath>../../chocolate_doom/i_endoom.h</itemPath>
+      <itemPath>../../chocolate_doom/i_joystick.c</itemPath>
+      <itemPath>../../chocolate_doom/i_joystick.h</itemPath>
+      <itemPath>../../chocolate_doom/i_main.c</itemPath>
+      <itemPath>../../chocolate_doom/i_scale.c</itemPath>
+      <itemPath>../../chocolate_doom/i_scale.h</itemPath>
+      <itemPath>../../chocolate_doom/i_sound.c</itemPath>
+      <itemPath>../../chocolate_doom/i_sound.h</itemPath>
+      <itemPath>../../chocolate_doom/i_swap.h</itemPath>
+      <itemPath>../../chocolate_doom/i_system.c</itemPath>
+      <itemPath>../../chocolate_doom/i_system.h</itemPath>
+      <itemPath>../../chocolate_doom/i_timer.c</itemPath>
+      <itemPath>../../chocolate_doom/i_timer.h</itemPath>
+      <itemPath>../../chocolate_doom/i_video.c</itemPath>
+      <itemPath>../../chocolate_doom/i_video.h</itemPath>
+      <itemPath>../../chocolate_doom/i_videohr.c</itemPath>
+      <itemPath>../../chocolate_doom/i_videohr.h</itemPath>
+      <itemPath>../../chocolate_doom/info.c</itemPath>
+      <itemPath>../../chocolate_doom/info.h</itemPath>
+      <itemPath>../../chocolate_doom/m_argv.c</itemPath>
+      <itemPath>../../chocolate_doom/m_argv.h</itemPath>
+      <itemPath>../../chocolate_doom/m_bbox.c</itemPath>
+      <itemPath>../../chocolate_doom/m_bbox.h</itemPath>
+      <itemPath>../../chocolate_doom/m_cheat.c</itemPath>
+      <itemPath>../../chocolate_doom/m_cheat.h</itemPath>
+      <itemPath>../../chocolate_doom/m_config.c</itemPath>
+      <itemPath>../../chocolate_doom/m_config.h</itemPath>
+      <itemPath>../../chocolate_doom/m_controls.c</itemPath>
+      <itemPath>../../chocolate_doom/m_controls.h</itemPath>
+      <itemPath>../../chocolate_doom/m_fixed.c</itemPath>
+      <itemPath>../../chocolate_doom/m_fixed.h</itemPath>
+      <itemPath>../../chocolate_doom/m_menu.c</itemPath>
+      <itemPath>../../chocolate_doom/m_menu.h</itemPath>
+      <itemPath>../../chocolate_doom/m_misc.c</itemPath>
+      <itemPath>../../chocolate_doom/m_misc.h</itemPath>
+      <itemPath>../../chocolate_doom/m_random.c</itemPath>
+      <itemPath>../../chocolate_doom/m_random.h</itemPath>
+      <itemPath>../../chocolate_doom/memio.c</itemPath>
+      <itemPath>../../chocolate_doom/memio.h</itemPath>
+      <itemPath>../../chocolate_doom/net_client.h</itemPath>
+      <itemPath>../../chocolate_doom/net_dedicated.h</itemPath>
+      <itemPath>../../chocolate_doom/net_defs.h</itemPath>
+      <itemPath>../../chocolate_doom/net_gui.h</itemPath>
+      <itemPath>../../chocolate_doom/net_io.h</itemPath>
+      <itemPath>../../chocolate_doom/net_loop.h</itemPath>
+      <itemPath>../../chocolate_doom/net_query.h</itemPath>
+      <itemPath>../../chocolate_doom/net_sdl.h</itemPath>
+      <itemPath>../../chocolate_doom/net_server.h</itemPath>
+      <itemPath>../../chocolate_doom/p_ceilng.c</itemPath>
+      <itemPath>../../chocolate_doom/p_doors.c</itemPath>
+      <itemPath>../../chocolate_doom/p_enemy.c</itemPath>
+      <itemPath>../../chocolate_doom/p_floor.c</itemPath>
+      <itemPath>../../chocolate_doom/p_inter.c</itemPath>
+      <itemPath>../../chocolate_doom/p_inter.h</itemPath>
+      <itemPath>../../chocolate_doom/p_lights.c</itemPath>
+      <itemPath>../../chocolate_doom/p_local.h</itemPath>
+      <itemPath>../../chocolate_doom/p_map.c</itemPath>
+      <itemPath>../../chocolate_doom/p_maputl.c</itemPath>
+      <itemPath>../../chocolate_doom/p_mobj.c</itemPath>
+      <itemPath>../../chocolate_doom/p_mobj.h</itemPath>
+      <itemPath>../../chocolate_doom/p_plats.c</itemPath>
+      <itemPath>../../chocolate_doom/p_pspr.c</itemPath>
+      <itemPath>../../chocolate_doom/p_pspr.h</itemPath>
+      <itemPath>../../chocolate_doom/p_saveg.c</itemPath>
+      <itemPath>../../chocolate_doom/p_saveg.h</itemPath>
+      <itemPath>../../chocolate_doom/p_setup.c</itemPath>
+      <itemPath>../../chocolate_doom/p_setup.h</itemPath>
+      <itemPath>../../chocolate_doom/p_sight.c</itemPath>
+      <itemPath>../../chocolate_doom/p_spec.c</itemPath>
+      <itemPath>../../chocolate_doom/p_spec.h</itemPath>
+      <itemPath>../../chocolate_doom/p_switch.c</itemPath>
+      <itemPath>../../chocolate_doom/p_telept.c</itemPath>
+      <itemPath>../../chocolate_doom/p_tick.c</itemPath>
+      <itemPath>../../chocolate_doom/p_tick.h</itemPath>
+      <itemPath>../../chocolate_doom/p_user.c</itemPath>
+      <itemPath>../../chocolate_doom/r_bsp.c</itemPath>
+      <itemPath>../../chocolate_doom/r_bsp.h</itemPath>
+      <itemPath>../../chocolate_doom/r_data.c</itemPath>
+      <itemPath>../../chocolate_doom/r_data.h</itemPath>
+      <itemPath>../../chocolate_doom/r_defs.h</itemPath>
+      <itemPath>../../chocolate_doom/r_draw.c</itemPath>
+      <itemPath>../../chocolate_doom/r_draw.h</itemPath>
+      <itemPath>../../chocolate_doom/r_local.h</itemPath>
+      <itemPath>../../chocolate_doom/r_main.c</itemPath>
+      <itemPath>../../chocolate_doom/r_main.h</itemPath>
+      <itemPath>../../chocolate_doom/r_plane.c</itemPath>
+      <itemPath>../../chocolate_doom/r_plane.h</itemPath>
+      <itemPath>../../chocolate_doom/r_segs.c</itemPath>
+      <itemPath>../../chocolate_doom/r_segs.h</itemPath>
+      <itemPath>../../chocolate_doom/r_sky.c</itemPath>
+      <itemPath>../../chocolate_doom/r_sky.h</itemPath>
+      <itemPath>../../chocolate_doom/r_state.h</itemPath>
+      <itemPath>../../chocolate_doom/r_things.c</itemPath>
+      <itemPath>../../chocolate_doom/r_things.h</itemPath>
+      <itemPath>../../chocolate_doom/s_sound.c</itemPath>
+      <itemPath>../../chocolate_doom/s_sound.h</itemPath>
+      <itemPath>../../chocolate_doom/sha1.c</itemPath>
+      <itemPath>../../chocolate_doom/sha1.h</itemPath>
+      <itemPath>../../chocolate_doom/sounds.c</itemPath>
+      <itemPath>../../chocolate_doom/sounds.h</itemPath>
+      <itemPath>../../chocolate_doom/st_lib.c</itemPath>
+      <itemPath>../../chocolate_doom/st_lib.h</itemPath>
+      <itemPath>../../chocolate_doom/st_stuff.c</itemPath>
+      <itemPath>../../chocolate_doom/st_stuff.h</itemPath>
+      <itemPath>../../chocolate_doom/statdump.c</itemPath>
+      <itemPath>../../chocolate_doom/statdump.h</itemPath>
+      <itemPath>../../chocolate_doom/tables.c</itemPath>
+      <itemPath>../../chocolate_doom/tables.h</itemPath>
+      <itemPath>../../chocolate_doom/v_patch.h</itemPath>
+      <itemPath>../../chocolate_doom/v_video.c</itemPath>
+      <itemPath>../../chocolate_doom/v_video.h</itemPath>
+      <itemPath>../../chocolate_doom/w_checksum.c</itemPath>
+      <itemPath>../../chocolate_doom/w_checksum.h</itemPath>
+      <itemPath>../../chocolate_doom/w_file.c</itemPath>
+      <itemPath>../../chocolate_doom/w_file.h</itemPath>
+      <itemPath>../../chocolate_doom/w_file_stdc.c</itemPath>
+      <itemPath>../../chocolate_doom/w_main.c</itemPath>
+      <itemPath>../../chocolate_doom/w_main.h</itemPath>
+      <itemPath>../../chocolate_doom/w_merge.h</itemPath>
+      <itemPath>../../chocolate_doom/w_wad.c</itemPath>
+      <itemPath>../../chocolate_doom/w_wad.h</itemPath>
+      <itemPath>../../chocolate_doom/wi_stuff.c</itemPath>
+      <itemPath>../../chocolate_doom/wi_stuff.h</itemPath>
+      <itemPath>../../chocolate_doom/z_zone.c</itemPath>
+      <itemPath>../../chocolate_doom/z_zone.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f2" displayName="DDR Heap Manager" projectFiles="true">
+      <itemPath>../../umm_malloc/umm_info.c</itemPath>
+      <itemPath>../../umm_malloc/umm_integrity.c</itemPath>
+      <itemPath>../../umm_malloc/umm_malloc.c</itemPath>
+      <itemPath>../../umm_malloc/umm_malloc.h</itemPath>
+      <itemPath>../../umm_malloc/umm_malloc_cfg.h</itemPath>
+      <itemPath>../../umm_malloc/umm_poison.c</itemPath>
+    </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
@@ -297,6 +481,8 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
+    <Elem>../../chocolate_doom</Elem>
+    <Elem>../../umm_malloc</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -355,7 +541,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
-        <property key="make-warnings-into-errors" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
         <property key="optimization-level" value="-O1"/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
