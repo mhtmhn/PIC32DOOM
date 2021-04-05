@@ -23,6 +23,15 @@
 /* Define to the directory where all game files are located */
 #define FILES_DIR "0:/"
 
-/* Note: Find DDR Heap Manager config in common.h/.c */
+/* Assert block size is set to 1024 for umm_malloc 
+ * Note: Find DDR Heap Manager config in common.c 
+ */
+#ifndef UMM_BLOCK_BODY_SIZE
+#error UMM_BLOCK_BODY_SIZE not defined, define and set to 1024!
+#else 
+#if (UMM_BLOCK_BODY_SIZE < 1024)
+#error UMM_BLOCK_BODY_SIZE defined but not set or less than 1024!
+#endif
+#endif
 
 #endif
