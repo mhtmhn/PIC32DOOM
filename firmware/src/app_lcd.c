@@ -44,7 +44,7 @@ void APP_LCD_Initialize(void) {
     /* GFX Configuration */
     GFX_Set(GFXF_LAYER_BUFFER_COUNT, 1);
     GFX_Set(GFXF_LAYER_POSITION, 0, 0);
-    GFX_Set(GFXF_COLOR_MODE, GFX_COLOR_MODE_ARGB_8888);
+    GFX_Set(GFXF_COLOR_MODE, GFX_COLOR_MODE_RGB_565);
     GFX_Set(GFXF_LAYER_ALPHA_AMOUNT, 255);
     GFX_Set(GFXF_LAYER_VISIBLE, GFX_TRUE);
     GFX_Set(GFXF_LAYER_ENABLED, GFX_TRUE);
@@ -59,8 +59,8 @@ void APP_LCD_Initialize(void) {
     /* Framebuffer rectangle */
     app_lcd.rectfbuff.x = 0;
     app_lcd.rectfbuff.y = 0;
-    app_lcd.rectfbuff.width = LCD_WIDTH;
-    app_lcd.rectfbuff.height = LCD_HEIGHT;
+    app_lcd.rectfbuff.width = 320;
+    app_lcd.rectfbuff.height = 200;
 
     /* Framebuffer orientation */
     app_lcd.orientation = N2D_0;
@@ -68,21 +68,21 @@ void APP_LCD_Initialize(void) {
     /* GLCD Layer 0 */
     GFX_Get(GFXF_LAYER_BUFFER_ADDRESS, 0, &app_lcd.glcdlayer0.memory);
     app_lcd.glcdlayer0.gpu = KVA_TO_PA(app_lcd.glcdlayer0.memory);
-    app_lcd.glcdlayer0.format = N2D_BGRA8888;
+    app_lcd.glcdlayer0.format = N2D_RGB565;
     app_lcd.glcdlayer0.width = LCD_WIDTH;
     app_lcd.glcdlayer0.height = LCD_HEIGHT;
     app_lcd.glcdlayer0.orientation = app_lcd.orientation;
-    app_lcd.glcdlayer0.stride = app_lcd.glcdlayer0.width * 32 / 8;
+    app_lcd.glcdlayer0.stride = app_lcd.glcdlayer0.width * 16 / 8;
 
     /* Framebuffer */
     app_lcd.framebuffer.memory = (void*) ((uint8_t*) app_lcd.glcdlayer0.memory +
             LCD_FRAME_BYTES);
     app_lcd.framebuffer.gpu = KVA_TO_PA(app_lcd.framebuffer.memory);
-    app_lcd.framebuffer.format = N2D_BGRA8888;
-    app_lcd.framebuffer.width = LCD_WIDTH;
-    app_lcd.framebuffer.height = LCD_HEIGHT;
+    app_lcd.framebuffer.format = N2D_RGB565;
+    app_lcd.framebuffer.width = 320;
+    app_lcd.framebuffer.height = 200;
     app_lcd.framebuffer.orientation = app_lcd.orientation;
-    app_lcd.framebuffer.stride = app_lcd.framebuffer.width * 32 / 8;
+    app_lcd.framebuffer.stride = app_lcd.framebuffer.width * 16 / 8;
 
     /* Scaling */
     app_lcd.scale = false;

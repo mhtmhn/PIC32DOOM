@@ -35,6 +35,7 @@ rcsid[] = "$Id: i_x.c,v 1.6 1997/02/03 22:45:10 b1 Exp $";
 
 #include "tables.h"
 #include "doomkeys.h"
+#include "common.h"
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -110,6 +111,8 @@ static bool last_button_state;
 
 //static bool run;
 
+void* lcd_frame_buffer;
+
 void I_InitGraphics (void)
 {
     /*
@@ -128,7 +131,7 @@ void I_InitGraphics (void)
     */ //mohit
 
 	I_VideoBuffer = (byte*)Z_Malloc (SCREENWIDTH * SCREENHEIGHT, PU_STATIC, NULL);
-
+    COMMON_APP_LCD_GetFBAddress(&lcd_frame_buffer);
 	screenvisible = true;
 }
 
@@ -324,11 +327,8 @@ void I_UpdateNoBlit (void)
 
 void I_FinishUpdate (void)
 {
-/*
-	int x, y;
 	byte index;
-
-	lcd_vsync = false;
+    int x, y;
 
 	for (y = 0; y < SCREENHEIGHT; y++)
 	{
@@ -336,14 +336,11 @@ void I_FinishUpdate (void)
 		{
 			index = I_VideoBuffer[y * SCREENWIDTH + x];
 
-			((uint16_t*)lcd_frame_buffer)[x * GFX_MAX_WIDTH + (GFX_MAX_WIDTH - y - 1)] = rgb565_palette[index];
+			((uint16_t*)lcd_frame_buffer)[y * SCREENWIDTH + x] = rgb565_palette[index];
 		}
 	}
-
-	lcd_refresh ();
-
-	lcd_vsync = true;
- */ //mohit
+    
+    COMMON_APP_LCD_VSyncInterruptEnable();
 }
 
 //
