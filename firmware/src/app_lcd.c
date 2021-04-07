@@ -94,16 +94,20 @@ void APP_LCD_Tasks(void) {
     switch (app_lcd.state) {
             /* Application's initial state. */
         case APP_LCD_STATE_INIT:
-            //Fill LCD Black
+            /* Relay app state to common interface */
+            COMMON_SetAppIdle(COMMON_APP_LCD, false);
+            /* Fill LCD Black */
             n2d_fill(&app_lcd.glcdlayer0, N2D_NULL, 0x000000FF, N2D_BLEND_NONE);
-            //Turn on LCD backlight
+            /* Turn on LCD backlight */
             TM4301B_BACKLIGHT_Set();
-            //All done, Idle
+            /* All done, Idle */
             app_lcd.state = APP_LCD_STATE_IDLE;
             break;
 
             /* State machine idle state */
         case APP_LCD_STATE_IDLE:
+            /* Relay app state to common interface */
+            COMMON_SetAppIdle(COMMON_APP_LCD, true);
             break;
 
             /* The default state should never be executed */
@@ -142,5 +146,5 @@ size_t COMMON_APP_LCD_GetFreeDDR(void **address) {
      * with only 32 MB of internal DDR. 
      * AFAIK DOOM doesn't need more than 16 MiB.
      */
-    return (0xA9E00000 - ((uint32_t) *address));
+    return (0xA9E00000 - ((uint32_t) * address));
 }

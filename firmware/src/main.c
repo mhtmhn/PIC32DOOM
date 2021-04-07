@@ -17,11 +17,13 @@ int main(void) {
     SYS_Initialize(NULL);
     doom_logo();
 
+    /* Start Message */
+    printf("Please Insert SD Card\r\n");
+
     while (true) {
         /* Maintain state machines */
         SYS_Tasks();
-        if (COMMON_GetTicks() > 2000)
-        {
+        if (COMMON_AllAppsIdle()) {
             printf("Starting...\r\n");
             D_DoomMain();
         }

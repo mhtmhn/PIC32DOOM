@@ -1763,10 +1763,10 @@ void D_DoomMain (void)
     DEH_printf("\nP_Init: Init Playloop state.\n");
     P_Init ();
 
-    DEH_printf("S_Init: Setting up sound.\n");
+    //mohit//DEH_printf("S_Init: Setting up sound.\n");
     S_Init (sfxVolume * 8, musicVolume * 8);
 
-    DEH_printf("D_CheckNetGame: Checking network game status.\n");
+    //mohit//DEH_printf("D_CheckNetGame: Checking network game status.\n");
     D_CheckNetGame ();
 
     PrintGameVersion();

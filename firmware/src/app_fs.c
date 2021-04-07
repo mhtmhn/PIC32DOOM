@@ -29,6 +29,8 @@ static void APP_FS_SysFSEventHandler(SYS_FS_EVENT event,
             /* If the event is unmount then check if media is unmounted */
         case SYS_FS_EVENT_UNMOUNT:
             if (strcmp((const char *) eventData, SDCARD_MOUNT_NAME) == 0) {
+                /* Relay app state to common interface */
+                COMMON_SetAppIdle(COMMON_APP_FS, false);
                 printf("File System Unmounted\r\n");
                 app_fs.mounted = false;
                 app_fs.state = APP_FS_STATE_MOUNT_WAIT;
@@ -36,10 +38,14 @@ static void APP_FS_SysFSEventHandler(SYS_FS_EVENT event,
             break;
 
         case SYS_FS_EVENT_ERROR:
+            /* Relay app state to common interface */
+            COMMON_SetAppIdle(COMMON_APP_FS, false);
             printf("File System Error\r\n");
             break;
 
         default:
+            /* Relay app state to common interface */
+            COMMON_SetAppIdle(COMMON_APP_FS, false);
             printf("File System Unhandled Event\r\n");
             break;
     }
@@ -60,6 +66,8 @@ void APP_FS_Tasks(void) {
     switch (app_fs.state) {
             /* State machine waits for the sdcard to be mounted */
         case APP_FS_STATE_MOUNT_WAIT:
+            /* Relay app state to common interface */
+            COMMON_SetAppIdle(COMMON_APP_FS, false);
             /* Wait for card to be mounted */
             if (app_fs.mounted == true) {
                 app_fs.state = APP_FS_STATE_IDLE;
@@ -68,6 +76,8 @@ void APP_FS_Tasks(void) {
 
             /* State machine idle state */
         case APP_FS_STATE_IDLE:
+            /* Relay app state to common interface */
+            COMMON_SetAppIdle(COMMON_APP_FS, true);
             break;
 
             /* The default state should never be executed */

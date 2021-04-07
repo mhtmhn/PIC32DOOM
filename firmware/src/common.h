@@ -15,6 +15,16 @@
 #include "configuration.h"
 #include "definitions.h"
 
+/* APP index */
+typedef enum {
+    /* File System Handler */
+    COMMON_APP_FS = 0,
+
+    /* LCD Graphics */
+    COMMON_APP_LCD,
+
+} COMMON_APPS;
+
 /* Application state data type */
 typedef enum {
     /* Application state machine's initial state */
@@ -33,12 +43,27 @@ typedef struct {
     /* Time in ms since boot */
     uint32_t ticks;
 
+    /* APP_FS Idle flag*/
+    bool app_fs_idle;
+
+    /* APP_LCD Idle flag*/
+    bool app_lcd_idle;
+
 } COMMON_DATA;
 
 void COMMON_Initialize(void);
 void COMMON_Tasks(void);
 
 /* COMMON Interface Utilities */
+
+/* Set Idle flag */
+void COMMON_SetAppIdle(COMMON_APPS app, bool is_idle);
+
+/* Get app Idle flag */
+bool COMMON_GetAppIdle(COMMON_APPS app);
+
+/* Checks if all apps are Idle */
+bool COMMON_AllAppsIdle(void);
 
 /* Time in ms since boot */
 inline uint32_t COMMON_GetTicks(void);
