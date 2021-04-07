@@ -89,7 +89,7 @@ void COMMON_APP_LCD_UpdateOnVSync(void);
 /* Get Framebuffer Address */
 void COMMON_APP_LCD_GetFBAddress(void **);
 
-/* Get unallocated DDR start address and size */
+/* Get unallocated 32-bit aligned DDR start address and size */
 size_t COMMON_APP_LCD_GetFreeDDR(void **);
 
 #endif /* _COMMON_H */

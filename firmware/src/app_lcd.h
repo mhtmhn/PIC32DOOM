@@ -19,8 +19,14 @@
 /* LCD Parameters */
 #define LCD_WIDTH 480
 #define LCD_HEIGHT 272
-#define LCD_BITS_PERPIXEL 32
+#define LCD_BITS_PERPIXEL 16
 #define LCD_FRAME_BYTES ((LCD_WIDTH*LCD_HEIGHT*LCD_BITS_PERPIXEL)/8)
+
+/* Framebuffer Parameters */
+#define FB_WIDTH 320
+#define FB_HEIGHT 200 
+#define FB_BITS_PERPIXEL 16
+#define FB_FRAME_BYTES ((FB_WIDTH*FB_HEIGHT*FB_BITS_PERPIXEL)/8)
 
 /* Application state data type */
 typedef enum {
@@ -53,8 +59,8 @@ typedef struct {
     /* Framebuffer orientation */
     n2d_orientation_t orientation;
 
-    /* Scaling */
-    bool scale;
+    /* Trigger update callback on VSync */
+    bool update;
 
 } APP_LCD_DATA;
 
