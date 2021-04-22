@@ -27,5 +27,20 @@
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
         </data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>app</word>
+            <word>apps</word>
+            <word>backlight</word>
+            <word>Blit</word>
+            <word>Blits</word>
+            <word>framebuffer</word>
+            <word>hal</word>
+            <word>Init</word>
+            <word>libnano</word>
+            <word>Mohit</word>
+            <word>ms</word>
+            <word>nano</word>
+            <word>sdcard</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>
