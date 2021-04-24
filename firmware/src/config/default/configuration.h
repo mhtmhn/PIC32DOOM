@@ -127,8 +127,18 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
+/* I2C Driver Instance 0 Configuration Options */
+#define DRV_I2C_INDEX_0                       0
+#define DRV_I2C_CLIENTS_NUMBER_IDX0           1
+#define DRV_I2C_QUEUE_SIZE_IDX0               2
+#define DRV_I2C_CLOCK_SPEED_IDX0              400000
+
 /* SDMMC Driver Global Configuration Options */
 #define DRV_SDMMC_INSTANCES_NUMBER                       1
+
+/* I2C Driver Common Configuration Options */
+#define DRV_I2C_INSTANCES_NUMBER              1
+
 
 
 /*** SDMMC Driver Instance 0 Configuration ***/
@@ -141,6 +151,10 @@ extern "C" {
 #define DRV_SDMMC_CARD_DETECTION_METHOD_IDX0             DRV_SDMMC_CD_METHOD_POLLING
 
 
+
+
+/*** MXT336T Driver Configuration ***/
+#define DRV_MAXTOUCH_I2C_MODULE_INDEX   0
 
 
 
