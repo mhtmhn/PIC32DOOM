@@ -14,5 +14,6 @@
 #define _CHOCOLATE_DOOM_H_
 
 void D_DoomMain(void);
+void D_DoomTask(void);
 
 #endif /* _CHOCOLATE_DOOM_H_ */
