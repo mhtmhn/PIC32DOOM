@@ -37,10 +37,20 @@ void APP_LCD_Initialize(void) {
     if (GFX_Open(0, 0, 0, NULL) == NULL)
         __builtin_software_breakpoint();
 
-    /* GFX Configuration */
+    /* GFX Layer 0 Configuration */
+    GFX_Set(GFXF_LAYER_ACTIVE, 0);
     GFX_Set(GFXF_LAYER_BUFFER_COUNT, 1);
     GFX_Set(GFXF_LAYER_POSITION, 0, 0);
-    GFX_Set(GFXF_COLOR_MODE, GFX_COLOR_MODE_RGB_565);
+    GFX_Set(GFXF_COLOR_MODE, GFX_COLOR_MODE_RGBA_8888);
+    GFX_Set(GFXF_LAYER_ALPHA_AMOUNT, 255);
+    GFX_Set(GFXF_LAYER_VISIBLE, GFX_TRUE);
+    GFX_Set(GFXF_LAYER_ENABLED, GFX_TRUE);
+
+    /* GFX Layer 1 Configuration */
+    GFX_Set(GFXF_LAYER_ACTIVE, 1);
+    GFX_Set(GFXF_LAYER_BUFFER_COUNT, 1);
+    GFX_Set(GFXF_LAYER_POSITION, 0, 0);
+    GFX_Set(GFXF_COLOR_MODE, GFX_COLOR_MODE_RGBA_8888);
     GFX_Set(GFXF_LAYER_ALPHA_AMOUNT, 255);
     GFX_Set(GFXF_LAYER_VISIBLE, GFX_TRUE);
     GFX_Set(GFXF_LAYER_ENABLED, GFX_TRUE);
@@ -50,23 +60,34 @@ void APP_LCD_Initialize(void) {
     app_lcd.orientation = N2D_0;
 
     /* GLCD Layer 0 */
+    GFX_Set(GFXF_LAYER_ACTIVE, 0);
     GFX_Get(GFXF_LAYER_BUFFER_ADDRESS, 0, &app_lcd.glcdlayer0.memory);
     app_lcd.glcdlayer0.gpu = KVA_TO_PA(app_lcd.glcdlayer0.memory);
-    app_lcd.glcdlayer0.format = N2D_RGB565;
+    app_lcd.glcdlayer0.format = N2D_RGBA8888;
     app_lcd.glcdlayer0.width = LCD_WIDTH;
     app_lcd.glcdlayer0.height = LCD_HEIGHT;
     app_lcd.glcdlayer0.orientation = app_lcd.orientation;
-    app_lcd.glcdlayer0.stride = app_lcd.glcdlayer0.width * 16 / 8;
+    app_lcd.glcdlayer0.stride = app_lcd.glcdlayer0.width * LCD_BITS_PERPIXEL / 8;
+
+    /* GLCD Layer 1 */
+    GFX_Set(GFXF_LAYER_ACTIVE, 1);
+    GFX_Get(GFXF_LAYER_BUFFER_ADDRESS, 0, &app_lcd.glcdlayer1.memory);
+    app_lcd.glcdlayer1.gpu = KVA_TO_PA(app_lcd.glcdlayer1.memory);
+    app_lcd.glcdlayer1.format = N2D_RGBA8888;
+    app_lcd.glcdlayer1.width = LCD_WIDTH;
+    app_lcd.glcdlayer1.height = LCD_HEIGHT;
+    app_lcd.glcdlayer1.orientation = app_lcd.orientation;
+    app_lcd.glcdlayer1.stride = app_lcd.glcdlayer1.width * LCD_BITS_PERPIXEL / 8;
 
     /* Framebuffer */
-    app_lcd.framebuffer.memory = (void*) ((uint8_t*) app_lcd.glcdlayer0.memory +
+    app_lcd.framebuffer.memory = (void*) ((uint8_t*) app_lcd.glcdlayer1.memory +
             LCD_FRAME_BYTES);
     app_lcd.framebuffer.gpu = KVA_TO_PA(app_lcd.framebuffer.memory);
     app_lcd.framebuffer.format = N2D_RGB565;
     app_lcd.framebuffer.width = FB_WIDTH;
     app_lcd.framebuffer.height = FB_HEIGHT;
     app_lcd.framebuffer.orientation = app_lcd.orientation;
-    app_lcd.framebuffer.stride = app_lcd.framebuffer.width * 16 / 8;
+    app_lcd.framebuffer.stride = app_lcd.framebuffer.width * FB_BITS_PERPIXEL / 8;
 
     /* Update callback on VSync */
     app_lcd.update = true;
@@ -80,8 +101,9 @@ void APP_LCD_Tasks(void) {
         case APP_LCD_STATE_INIT:
             /* Relay app state to common interface */
             COMMON_SetAppIdle(COMMON_APP_LCD, false);
-            /* Fill LCD Black */
-            n2d_fill(&app_lcd.glcdlayer0, N2D_NULL, 0x0000, N2D_BLEND_NONE);
+            /* Init LCD memory */
+            n2d_fill(&app_lcd.glcdlayer0, N2D_NULL, 0xFF000000, N2D_BLEND_NONE);
+            n2d_fill(&app_lcd.glcdlayer1, N2D_NULL, 0, N2D_BLEND_NONE);
             /* All done, Idle */
             app_lcd.state = APP_LCD_STATE_IDLE;
             break;

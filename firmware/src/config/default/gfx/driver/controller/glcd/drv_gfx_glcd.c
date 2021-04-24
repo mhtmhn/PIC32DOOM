@@ -65,7 +65,7 @@
 
 #define DISPLAY_WIDTH  480
 #define DISPLAY_HEIGHT 272
-#define GFX_GLCD_LAYERS 1
+#define GFX_GLCD_LAYERS 2
 #define GFX_GLCD_BACKGROUND_COLOR 0xFFFFFF00
 #define GFX_GLCD_CONFIG_CONTROL 0x80000000
 #define GFX_GLCD_CONFIG_CLK_DIVIDER 1
@@ -73,6 +73,9 @@
 /*** GLCD Layer 0 Configuration ***/
 #define  GFX_GLCD_LAYER0_BASEADDR                      0xA8000000
 #define  GFX_GLCD_LAYER0_DBL_BASEADDR                  0xA8465000
+/*** GLCD Layer 1 Configuration ***/
+#define  GFX_GLCD_LAYER1_BASEADDR                      0xA8177000
+#define  GFX_GLCD_LAYER1_DBL_BASEADDR                  0xA85DC000
 
 #define LCDC_DEFAULT_GFX_COLOR_MODE GFX_COLOR_MODE_RGB_565
 #define FRAMEBUFFER_PTR_TYPE    uint16_t*
@@ -510,6 +513,7 @@ static GFX_Result glcdInitialize(GFX_Context* context)
     PLIB_GLCD_Enable();
 
     drvLayer[0].baseaddr[0] = (FRAMEBUFFER_PTR_TYPE)GFX_GLCD_LAYER0_BASEADDR;
+    drvLayer[1].baseaddr[0] = (FRAMEBUFFER_PTR_TYPE)GFX_GLCD_LAYER1_BASEADDR;
 
     for (layerCount = 0; layerCount < context->layer.count; layerCount++)
     {

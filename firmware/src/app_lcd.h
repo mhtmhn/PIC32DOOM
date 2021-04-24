@@ -19,7 +19,7 @@
 /* LCD Parameters */
 #define LCD_WIDTH 480
 #define LCD_HEIGHT 272
-#define LCD_BITS_PERPIXEL 16
+#define LCD_BITS_PERPIXEL 32
 #define LCD_FRAME_BYTES ((LCD_WIDTH*LCD_HEIGHT*LCD_BITS_PERPIXEL)/8)
 
 /* Framebuffer Parameters */
@@ -46,7 +46,10 @@ typedef struct {
     /* nano2D GPU variables */
     /* GLCD layer 0*/
     n2d_buffer_t glcdlayer0;
-
+    
+    /* GLCD layer 1*/
+    n2d_buffer_t glcdlayer1;
+    
     /* GLCD layer 0 rectangle */
     n2d_rectangle_t rectglcd0;
 

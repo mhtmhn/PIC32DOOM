@@ -27,13 +27,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 08652B594EF55154284FC067A703DF57
-- generatedChecksum: 02D285AA3934D3D11AFC2BD387C31A74
+- generatedChecksum: C323EFEC3EBE23E16B9228653FB86EA1
   logicalPath: config\default\gfx\driver\glcd
   name: drv_gfx_glcd.c
   physicalPath: gfx\driver\controller\glcd
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 02D285AA3934D3D11AFC2BD387C31A74
+  userChecksum: C323EFEC3EBE23E16B9228653FB86EA1
 - generatedChecksum: 875B9DA0764A056F51F47040A3214FCA
   logicalPath: config\default\driver\sdmmc
   name: drv_sdmmc.c
