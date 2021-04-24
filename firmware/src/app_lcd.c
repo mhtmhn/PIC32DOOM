@@ -10,6 +10,7 @@
 #include "gfx/driver/controller/glcd/plib_glcd.h"
 #include "peripheral/evic/plib_evic.h"
 #include <sys/kmem.h>
+#include "controls.h"
 
 /* Application data */
 APP_LCD_DATA app_lcd;
@@ -50,7 +51,7 @@ void APP_LCD_Initialize(void) {
     GFX_Set(GFXF_LAYER_ACTIVE, 1);
     GFX_Set(GFXF_LAYER_BUFFER_COUNT, 1);
     GFX_Set(GFXF_LAYER_POSITION, 0, 0);
-    GFX_Set(GFXF_COLOR_MODE, GFX_COLOR_MODE_RGBA_8888);
+    GFX_Set(GFXF_COLOR_MODE, GFX_COLOR_MODE_ARGB_8888);
     GFX_Set(GFXF_LAYER_ALPHA_AMOUNT, 255);
     GFX_Set(GFXF_LAYER_VISIBLE, GFX_TRUE);
     GFX_Set(GFXF_LAYER_ENABLED, GFX_TRUE);
@@ -104,6 +105,11 @@ void APP_LCD_Tasks(void) {
             /* Init LCD memory */
             n2d_fill(&app_lcd.glcdlayer0, N2D_NULL, 0xFF000000, N2D_BLEND_NONE);
             n2d_fill(&app_lcd.glcdlayer1, N2D_NULL, 0, N2D_BLEND_NONE);
+            /* Draw touch controls and hide */
+            memcpy((uint8_t*) app_lcd.glcdlayer1.memory, controls_map,
+                    sizeof (controls_map));
+            GFX_Set(GFXF_LAYER_ACTIVE, 1);
+            GFX_Set(GFXF_LAYER_ALPHA_AMOUNT, 0);
             /* All done, Idle */
             app_lcd.state = APP_LCD_STATE_IDLE;
             break;

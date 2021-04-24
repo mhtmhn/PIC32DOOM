@@ -321,6 +321,7 @@
       <itemPath>../src/doom_logo.h</itemPath>
       <itemPath>../src/app_lcd.h</itemPath>
       <itemPath>../src/common.h</itemPath>
+      <itemPath>controls.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -484,6 +485,7 @@
     <Elem>../src</Elem>
     <Elem>../../chocolate_doom</Elem>
     <Elem>../../umm_malloc</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
