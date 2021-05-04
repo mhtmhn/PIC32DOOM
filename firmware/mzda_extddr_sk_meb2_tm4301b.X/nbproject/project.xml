@@ -16,6 +16,7 @@
                 <sourceRootElem>../src</sourceRootElem>
                 <sourceRootElem>../../chocolate_doom</sourceRootElem>
                 <sourceRootElem>../../umm_malloc</sourceRootElem>
+                <sourceRootElem>.</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

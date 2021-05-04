@@ -191,6 +191,13 @@
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="default" projectFiles="true">
           <logicalFolder name="f3" displayName="driver" projectFiles="true">
+            <logicalFolder name="f2" displayName="i2c" projectFiles="true">
+              <itemPath>../src/config/default/driver/i2c/drv_i2c.h</itemPath>
+              <itemPath>../src/config/default/driver/i2c/drv_i2c_definitions.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f3" displayName="input" projectFiles="true">
+              <itemPath>../src/config/default/driver/input/drv_maxtouch.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="sdmmc" projectFiles="true">
               <itemPath>../src/config/default/driver/sdmmc/drv_sdmmc.h</itemPath>
               <itemPath>../src/config/default/driver/sdmmc/src/drv_sdmmc_local.h</itemPath>
@@ -262,6 +269,12 @@
             <logicalFolder name="f5" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/default/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="f9" displayName="i2c" projectFiles="true">
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/default/peripheral/i2c/master/plib_i2c1_master.h</itemPath>
+                <itemPath>../src/config/default/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
             <logicalFolder name="f2" displayName="sdhc" projectFiles="true">
               <itemPath>../src/config/default/peripheral/sdhc/plib_sdhc_common.h</itemPath>
               <itemPath>../src/config/default/peripheral/sdhc/plib_sdhc.h</itemPath>
@@ -294,6 +307,14 @@
               <itemPath>../src/config/default/system/fs/src/sys_fs_media_manager_local.h</itemPath>
               <itemPath>../src/config/default/system/fs/sys_fs_fat_interface.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="f6" displayName="input" projectFiles="true">
+              <itemPath>../src/config/default/system/input/sys_input.h</itemPath>
+              <itemPath>../src/config/default/system/input/sys_input_gesture.h</itemPath>
+              <itemPath>../src/config/default/system/input/sys_input_keyboard.h</itemPath>
+              <itemPath>../src/config/default/system/input/sys_input_listener.h</itemPath>
+              <itemPath>../src/config/default/system/input/sys_input_mouse.h</itemPath>
+              <itemPath>../src/config/default/system/input/sys_input_touch.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f2" displayName="int" projectFiles="true">
               <itemPath>../src/config/default/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/default/system/int/sys_int_mapping.h</itemPath>
@@ -321,6 +342,7 @@
       <itemPath>../src/doom_logo.h</itemPath>
       <itemPath>../src/app_lcd.h</itemPath>
       <itemPath>../src/common.h</itemPath>
+      <itemPath>controls.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -337,6 +359,13 @@
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="default" projectFiles="true">
           <logicalFolder name="f3" displayName="driver" projectFiles="true">
+            <logicalFolder name="f2" displayName="i2c" projectFiles="true">
+              <itemPath>../src/config/default/driver/i2c/src/drv_i2c.c</itemPath>
+              <itemPath>../src/config/default/driver/i2c/src/drv_i2c_local.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f3" displayName="input" projectFiles="true">
+              <itemPath>../src/config/default/driver/input/drv_maxtouch.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="sdmmc" projectFiles="true">
               <itemPath>../src/config/default/driver/sdmmc/src/drv_sdmmc_file_system.c</itemPath>
               <itemPath>../src/config/default/driver/sdmmc/src/drv_sdmmc.c</itemPath>
@@ -406,6 +435,11 @@
             <logicalFolder name="f5" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/default/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="f9" displayName="i2c" projectFiles="true">
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/default/peripheral/i2c/master/plib_i2c1_master.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
             <logicalFolder name="f2" displayName="sdhc" projectFiles="true">
               <itemPath>../src/config/default/peripheral/sdhc/plib_sdhc.c</itemPath>
             </logicalFolder>
@@ -434,6 +468,10 @@
               <itemPath>../src/config/default/system/fs/src/sys_fs_media_manager.c</itemPath>
               <itemPath>../src/config/default/system/fs/src/sys_fs_fat_interface.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="f5" displayName="input" projectFiles="true">
+              <itemPath>../src/config/default/system/input/sys_input.c</itemPath>
+              <itemPath>../src/config/default/system/input/sys_input_listener.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f2" displayName="int" projectFiles="true">
               <itemPath>../src/config/default/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
@@ -461,18 +499,22 @@
         <itemPath>../src/config/default/default.mhc/core_timer.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/ddr.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/drv_i2c.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/drv_sdmmc.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/gfx_disp_pdatm4301b_480x272.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/gfx_driver_2dgpu.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/gfx_driver_glcd.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/gfx_hal.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/gfx_maxtouch_controller.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/GraphSettings.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/i2c1.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/sdhc.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/stdio.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/sys_fs.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/sys_input.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/sys_time.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/uart2.yml</itemPath>
       </logicalFolder>
@@ -484,6 +526,7 @@
     <Elem>../src</Elem>
     <Elem>../../chocolate_doom</Elem>
     <Elem>../../umm_malloc</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -543,7 +586,7 @@
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
         <property key="make-warnings-into-errors" value="false"/>
-        <property key="optimization-level" value="-O1"/>
+        <property key="optimization-level" value="-Os"/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>

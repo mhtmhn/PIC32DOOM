@@ -66,13 +66,6 @@ children:
       - type: Dynamic
         attributes: {id: gfx_hal, value: 'true'}
   - type: Boolean
-    attributes: {id: Layer1Enable}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: 'false'}
-  - type: Boolean
     attributes: {id: Layer2Enable}
     children:
     - type: Values
@@ -115,7 +108,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: gfx_driver_glcd, value: '1'}
+        attributes: {id: gfx_driver_glcd, value: '2'}
 - type: Attachments
   children:
   - type: DirectCapability

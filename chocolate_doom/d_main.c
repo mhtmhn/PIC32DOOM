@@ -439,7 +439,7 @@ void D_DoomLoop (void)
     {
         wipegamestate = gamestate;
     }
-
+#if ORIGCODE
     while (1)
     {
 		// frame syncronous IO operations
@@ -455,9 +455,24 @@ void D_DoomLoop (void)
 			D_Display ();
 		}
     }
+#endif
 }
 
+void D_DoomTask (void)
+{
+    // frame syncronous IO operations
+    I_StartFrame ();
 
+    TryRunTics (); // will run at least one tic
+
+    S_UpdateSounds (players[consoleplayer].mo);// move positional sounds
+
+    // Update display, next frame, with current state.
+    if (screenvisible)
+    {
+        D_Display ();
+    }
+}
 
 //
 //  DEMO LOOP

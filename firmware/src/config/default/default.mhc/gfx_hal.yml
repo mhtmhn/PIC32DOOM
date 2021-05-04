@@ -191,7 +191,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: gfx_driver_glcd, value: '1'}
+        attributes: {id: gfx_driver_glcd, value: '2'}
   - type: Integer
     attributes: {id: PixelClock}
     children:

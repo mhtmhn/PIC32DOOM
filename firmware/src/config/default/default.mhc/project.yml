@@ -27,13 +27,34 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 08652B594EF55154284FC067A703DF57
-- generatedChecksum: 02D285AA3934D3D11AFC2BD387C31A74
+- generatedChecksum: C323EFEC3EBE23E16B9228653FB86EA1
   logicalPath: config\default\gfx\driver\glcd
   name: drv_gfx_glcd.c
   physicalPath: gfx\driver\controller\glcd
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 02D285AA3934D3D11AFC2BD387C31A74
+  userChecksum: C323EFEC3EBE23E16B9228653FB86EA1
+- generatedChecksum: 13F062B063A4F4AE0B19CE872943995B
+  logicalPath: config\default\driver\i2c
+  name: drv_i2c.c
+  physicalPath: driver\i2c\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 13F062B063A4F4AE0B19CE872943995B
+- generatedChecksum: 37780F17759DED907A0F36E28BFB3136
+  logicalPath: config\default\driver\i2c
+  name: drv_i2c_local.h
+  physicalPath: driver\i2c\src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 37780F17759DED907A0F36E28BFB3136
+- generatedChecksum: D60987ADDBC55D814DF1F8934395B71C
+  logicalPath: config\default\driver\input
+  name: drv_maxtouch.c
+  physicalPath: driver\input
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: D60987ADDBC55D814DF1F8934395B71C
 - generatedChecksum: 875B9DA0764A056F51F47040A3214FCA
   logicalPath: config\default\driver\sdmmc
   name: drv_sdmmc.c
@@ -286,20 +307,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 199F45E462662B5BB25B06BCCFA92C4B
-- generatedChecksum: 19E679FE89EE5C7AA23D02E77B4524D4
+- generatedChecksum: 08650C4E32AAC085D846892566D3C28B
   logicalPath: config\default
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 19E679FE89EE5C7AA23D02E77B4524D4
-- generatedChecksum: 32DDE1DCC265EF0334E2B48ABB46B143
+  userChecksum: 08650C4E32AAC085D846892566D3C28B
+- generatedChecksum: D49AAD3E3EEF788DE00F649558C82087
   logicalPath: config\default
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A859C5FA7B7C2AAA01FDA99855DC2965
+  userChecksum: DF914F6D8786B0395EB6C24899739815
 - generatedChecksum: 8F5212F4ED5F5D93618797A94D7E6847
   logicalPath: config\default\gfx\driver\2dgpu
   name: libnano2D_hal.c
@@ -335,13 +356,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DA10C8889278A796D0EE4C6096B57C3
-- generatedChecksum: 6AC1B73576F33F2B7969D92FB2A8A586
+- generatedChecksum: 8A3E34E3D90C3264D1A1310ADDA890DF
   logicalPath: config\default\peripheral\clk
   name: plib_clk.c
   physicalPath: peripheral\clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6AC1B73576F33F2B7969D92FB2A8A586
+  userChecksum: 8A3E34E3D90C3264D1A1310ADDA890DF
 - generatedChecksum: 2FEFEA0D4E94F5A5F3D76BAEC3D602E5
   logicalPath: config\default\peripheral\coretimer
   name: plib_coretimer.c
@@ -356,13 +377,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 84A02BDC4B7228AA0FCDC98B7C2A04A0
-- generatedChecksum: 667343AEBF76E570325B30F67DCE0AE0
+- generatedChecksum: D39510F5DE354E258AA4DAB33F274607
   logicalPath: config\default\peripheral\evic
   name: plib_evic.c
   physicalPath: peripheral\evic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 667343AEBF76E570325B30F67DCE0AE0
+  userChecksum: D39510F5DE354E258AA4DAB33F274607
 - generatedChecksum: 953D0BCD584CE6BAAF2E253DBA03E02E
   logicalPath: config\default\gfx\driver\glcd
   name: plib_glcd.c
@@ -377,6 +398,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 6DDC03741D3ADAE5CEB7A213B0C79E44
+- generatedChecksum: 39A597F5FDC7FEDBEA0609B0D5A42CE2
+  logicalPath: config\default\peripheral\i2c\master
+  name: plib_i2c1_master.c
+  physicalPath: peripheral\i2c\master
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 39A597F5FDC7FEDBEA0609B0D5A42CE2
 - generatedChecksum: BC828B0E7365E4F8FFFC1EAD3A155FE6
   logicalPath: config\default\peripheral\sdhc
   name: plib_sdhc.c
@@ -419,6 +447,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 72D106D7DAF840E749D01976A0F2E7CA
+- generatedChecksum: 47721E489E5C84504C6F0054EF0FAA3A
+  logicalPath: config\default\system\input
+  name: sys_input.c
+  physicalPath: system\input
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 47721E489E5C84504C6F0054EF0FAA3A
+- generatedChecksum: 99F5C28835CA70CF308C005561EF92C6
+  logicalPath: config\default\system\input
+  name: sys_input_listener.c
+  physicalPath: system\input
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 99F5C28835CA70CF308C005561EF92C6
 - generatedChecksum: C95CE0ABB86E6B11CF77E8891D294510
   logicalPath: config\default\system\int
   name: sys_int.c
@@ -433,13 +475,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
-- generatedChecksum: C35F4D2151C4530C3722349B6271BA7E
+- generatedChecksum: 8A7AB9A819ABD149899461490791746D
   logicalPath: config\default
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C35F4D2151C4530C3722349B6271BA7E
+  userChecksum: 8A7AB9A819ABD149899461490791746D
 - generatedChecksum: CD1794BE8A9148BA4C835E811CBD7164
   logicalPath: config\default\stdio
   name: xc32_monitor.c
@@ -468,20 +510,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: null
-- generatedChecksum: 1E0DD5871CF4D01EF227F820985AC1AE
+- generatedChecksum: AB8DF69E59A341AE1461C0383303D6E5
   logicalPath: config\default
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1E0DD5871CF4D01EF227F820985AC1AE
-- generatedChecksum: ED3E99099F710F1624E06E103E2F6CA5
+  userChecksum: AB8DF69E59A341AE1461C0383303D6E5
+- generatedChecksum: 8FBA2887790D4BBA421082ABE1F7C8CD
   logicalPath: config\default
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: ED3E99099F710F1624E06E103E2F6CA5
+  userChecksum: 8FBA2887790D4BBA421082ABE1F7C8CD
 - generatedChecksum: E189C26B2269F8DE46033CCD0621958D
   logicalPath: config\default
   name: device.h
@@ -524,6 +566,27 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 5670FD6FA5E47044D1F36E074BB5BFC6
+- generatedChecksum: 3C6689B8800C6234028EC2FBE82E25CF
+  logicalPath: config\default\driver\i2c
+  name: drv_i2c.h
+  physicalPath: driver\i2c
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 3C6689B8800C6234028EC2FBE82E25CF
+- generatedChecksum: 260EF469FECCFEF9418D6268909EE2F8
+  logicalPath: config\default\driver\i2c
+  name: drv_i2c_definitions.h
+  physicalPath: driver\i2c
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 260EF469FECCFEF9418D6268909EE2F8
+- generatedChecksum: 96E55AC4B3153F31385A2A7066E9CCBB
+  logicalPath: config\default\driver\input
+  name: drv_maxtouch.h
+  physicalPath: driver\input
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 96E55AC4B3153F31385A2A7066E9CCBB
 - generatedChecksum: 7F812CE063F8775E4754590A27A28529
   logicalPath: config\default\driver\sdmmc
   name: drv_sdmmc.h
@@ -825,6 +888,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 62017ADAF0D1A0EBD5A3EB604B3FF320
+- generatedChecksum: 407D8CE5F0C091BCEBB78967FECBE53E
+  logicalPath: config\default\peripheral\i2c\master
+  name: plib_i2c1_master.h
+  physicalPath: peripheral\i2c\master
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 407D8CE5F0C091BCEBB78967FECBE53E
+- generatedChecksum: B963C6FE44292A1C4A14C3BA5BE95AEE
+  logicalPath: config\default\peripheral\i2c\master
+  name: plib_i2c_master_common.h
+  physicalPath: peripheral\i2c\master
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: B963C6FE44292A1C4A14C3BA5BE95AEE
 - generatedChecksum: F0C5D6AAAE985637DC98366C5299E48A
   logicalPath: config\default\peripheral\sdhc
   name: plib_sdhc.h
@@ -902,6 +979,48 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: E50782BD59B15F2EAAF53AAD818793EE
+- generatedChecksum: 533CEADA23BA3DB1FDC642E71682110D
+  logicalPath: config\default\system\input
+  name: sys_input.h
+  physicalPath: system\input
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 533CEADA23BA3DB1FDC642E71682110D
+- generatedChecksum: 326B45D18D7A6BB4B2D1E0FCF50EF176
+  logicalPath: config\default\system\input
+  name: sys_input_gesture.h
+  physicalPath: system\input
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 326B45D18D7A6BB4B2D1E0FCF50EF176
+- generatedChecksum: A254F5CC3DD63C1432666958260CADAB
+  logicalPath: config\default\system\input
+  name: sys_input_keyboard.h
+  physicalPath: system\input
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: A254F5CC3DD63C1432666958260CADAB
+- generatedChecksum: 34162E1DCA132A3EAB3767F529CFD195
+  logicalPath: config\default\system\input
+  name: sys_input_listener.h
+  physicalPath: system\input
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 34162E1DCA132A3EAB3767F529CFD195
+- generatedChecksum: 9B0AB7A5A79745BE5AEC37B9A14D7090
+  logicalPath: config\default\system\input
+  name: sys_input_mouse.h
+  physicalPath: system\input
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 9B0AB7A5A79745BE5AEC37B9A14D7090
+- generatedChecksum: 6012C94D59E0E69145C089AB1F736C28
+  logicalPath: config\default\system\input
+  name: sys_input_touch.h
+  physicalPath: system\input
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6012C94D59E0E69145C089AB1F736C28
 - generatedChecksum: 47330C2D8F204B2B69F8A86240A564B6
   logicalPath: config\default\system\int
   name: sys_int.h
