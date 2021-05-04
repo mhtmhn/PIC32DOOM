@@ -338,8 +338,10 @@ enum
     detail,
     scrnsize,
     option_empty1,
+#if ORIGCODE_MOUSE_OPTION
     mousesens,
     option_empty2,
+#endif
     soundvol,
     opt_end
 } options_e;
@@ -351,8 +353,10 @@ menuitem_t OptionsMenu[]=
     {1,"M_DETAIL",	M_ChangeDetail,'g'},
     {2,"M_SCRNSZ",	M_SizeDisplay,'s'},
     {-1,"",0,'\0'},
+#if ORIGCODE_MOUSE_OPTION
     {2,"M_MSENS",	M_ChangeSensitivity,'m'},
     {-1,"",0,'\0'},
+#endif
 #if ORIGCODE_SOUND_OPTION
     {1,"M_SVOL",	M_Sound,'s'}
 #else
@@ -1041,10 +1045,10 @@ void M_DrawOptions(void)
     V_DrawPatchDirect(OptionsDef.x + 120, OptionsDef.y + LINEHEIGHT * messages,
                       W_CacheLumpName(DEH_String(msgNames[showMessages]),
                                       PU_CACHE));
-
+#if ORIGCODE_MOUSE_OPTION
     M_DrawThermo(OptionsDef.x, OptionsDef.y + LINEHEIGHT * (mousesens + 1),
 		 10, mouseSensitivity);
-
+#endif
     M_DrawThermo(OptionsDef.x,OptionsDef.y+LINEHEIGHT*(scrnsize+1),
 		 9,screenSize);
 }
@@ -1188,7 +1192,7 @@ void M_QuitResponse(int key)
     I_Quit ();
 }
 
-
+#if ORIGCODE
 static char *M_SelectEndMessage(void)
 {
     char **endmsg;
@@ -1208,14 +1212,20 @@ static char *M_SelectEndMessage(void)
 
     return endmsg[gametic % NUM_QUITMESSAGES];
 }
-
+#endif
 
 void M_QuitDOOM(int choice)
 {
+#if ORIGCODE_QUIT_OPTION
     DEH_snprintf(endstring, sizeof(endstring), "%s\n\n" DOSY,
                  DEH_String(M_SelectEndMessage()));
 
     M_StartMessage(endstring,M_QuitResponse,true);
+#else
+    DEH_snprintf(endstring, sizeof(endstring), "PIC32DOOM\n\nMohit M");
+
+    M_StartMessage(endstring,M_QuitResponse,true);
+#endif
 }
 
 
