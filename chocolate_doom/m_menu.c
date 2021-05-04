@@ -58,6 +58,9 @@
 
 #include "m_menu.h"
 
+#ifndef ORIGCODE_SOUND_OPTION
+#include "definitions.h"
+#endif
 
 extern patch_t*		hu_font[HU_FONTSIZE];
 extern boolean		message_dontfuckwithme;
@@ -350,7 +353,11 @@ menuitem_t OptionsMenu[]=
     {-1,"",0,'\0'},
     {2,"M_MSENS",	M_ChangeSensitivity,'m'},
     {-1,"",0,'\0'},
+#if ORIGCODE_SOUND_OPTION
     {1,"M_SVOL",	M_Sound,'s'}
+#else
+    {1, "WISCRT2", M_Sound, 's'}
+#endif
 };
 
 menu_t  OptionsDef =
@@ -415,17 +422,24 @@ enum
 {
     sfx_vol,
     sfx_empty1,
+#if ORIGCODE_SOUND_OPTION
     music_vol,
     sfx_empty2,
+#endif
     sound_end
 } sound_e;
 
 menuitem_t SoundMenu[]=
 {
+#if ORIGCODE_SOUND_OPTION
     {2,"M_SFXVOL",M_SfxVol,'s'},
     {-1,"",0,'\0'},
     {2,"M_MUSVOL",M_MusicVol,'m'},
     {-1,"",0,'\0'}
+#else
+    {2, "WIPCNT", M_SfxVol, 's'},
+    {-1, "", 0, '\0'},
+#endif
 };
 
 menu_t  SoundDef =
@@ -849,6 +863,7 @@ void M_DrawReadThis2(void)
 //
 void M_DrawSound(void)
 {
+#if ORIGCODE_SOUND_OPTION
     V_DrawPatchDirect (60, 38, W_CacheLumpName(DEH_String("M_SVOL"), PU_CACHE));
 
     M_DrawThermo(SoundDef.x,SoundDef.y+LINEHEIGHT*(sfx_vol+1),
@@ -856,6 +871,12 @@ void M_DrawSound(void)
 
     M_DrawThermo(SoundDef.x,SoundDef.y+LINEHEIGHT*(music_vol+1),
 		 16,musicVolume);
+#else
+    V_DrawPatchDirect(60, 38, W_CacheLumpName(DEH_String("WISCRT2"), PU_CACHE));
+    
+    M_DrawThermo(SoundDef.x, SoundDef.y + LINEHEIGHT * (sfx_vol + 1),
+            16, sfxVolume);
+#endif
 }
 
 void M_Sound(int choice)
@@ -870,10 +891,18 @@ void M_SfxVol(int choice)
       case 0:
 	if (sfxVolume)
 	    sfxVolume--;
+#ifndef ORIGCODE_SOUND_OPTION
+        GFX_Set(GFXF_LAYER_ACTIVE, 1);
+        GFX_Set(GFXF_LAYER_ALPHA_AMOUNT, sfxVolume*17);
+#endif
 	break;
       case 1:
 	if (sfxVolume < 15)
 	    sfxVolume++;
+#ifndef ORIGCODE_SOUND_OPTION
+        GFX_Set(GFXF_LAYER_ACTIVE, 1);
+        GFX_Set(GFXF_LAYER_ALPHA_AMOUNT, sfxVolume*17);
+#endif
 	break;
     }
 	
