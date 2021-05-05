@@ -6,3 +6,6 @@
 
 This is a MPLAB X project and uses the <a href="https://microchipdeveloper.com/harmony3:mhc-overview" target="_blank">Harmony 3</a> framework.
 It also uses the MPLAB XC32 compiler, you might need to reduce the optimization to -O0 if you're using the free variant.
+
+Note:
+Needs a FAT32 SD card containing the DOOM1/DOOM/DOOM2.WAD or FREEDOOM1/2.WAD inserted into the J10 of the PIC32MZ DA Starter Kit (DM320008).
